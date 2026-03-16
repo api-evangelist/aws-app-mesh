@@ -1,0 +1,51 @@
+aid: aws-app-mesh
+name: AWS App Mesh
+description: >-
+  AWS App Mesh is a service mesh that provides application-level networking to
+  make it easy for your services to communicate with each other across multiple
+  types of compute infrastructure. App Mesh standardizes how your services
+  communicate, giving you end-to-end visibility and helping to ensure high
+  availability for your applications.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Service Mesh
+  - Networking
+  - Microservices
+  - AWS
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+apis:
+  - aid: aws-app-mesh:aws-app-mesh-api
+    name: AWS App Mesh API
+    description: >-
+      API for creating and managing App Mesh service meshes, virtual services,
+      virtual nodes, virtual routers, and routes.
+    humanURL: https://aws.amazon.com/app-mesh/
+    baseURL: https://appmesh.amazonaws.com
+    tags:
+      - Service Mesh
+      - Networking
+      - Microservices
+    properties:
+      - type: Documentation
+        url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+      - type: OpenAPI
+        url: https://api.apis.guru/v2/specs/amazonaws.com/appmesh/2019-01-25/openapi.yaml
+common:
+  - type: Website
+    url: https://aws.amazon.com/app-mesh/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/app-mesh/
+  - type: Getting Started
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting_started.html
+  - type: Terms of Service
+    url: https://aws.amazon.com/service-terms/
+  - type: Privacy Policy
+    url: https://aws.amazon.com/privacy/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
