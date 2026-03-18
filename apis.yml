@@ -16,7 +16,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-03-16'
+modified: '2026-03-18'
 specificationVersion: '0.19'
 apis:
   - aid: aws-app-mesh:aws-app-mesh-api
@@ -30,11 +30,20 @@ apis:
       - Service Mesh
       - Networking
       - Microservices
+      - Deprecated
     properties:
       - type: Documentation
         url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
       - type: OpenAPI
         url: https://api.apis.guru/v2/specs/amazonaws.com/appmesh/2019-01-25/openapi.yaml
+      - type: Reference
+        url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+      - type: Authentication
+        url: https://docs.aws.amazon.com/app-mesh/latest/userguide/security-iam.html
+      - type: Quickstart
+        url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting-started-ecs.html
+      - type: Deprecation Notice
+        url: https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
 common:
   - type: Website
     url: https://aws.amazon.com/app-mesh/
@@ -42,10 +51,22 @@ common:
     url: https://docs.aws.amazon.com/app-mesh/
   - type: Getting Started
     url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting_started.html
+  - type: Pricing
+    url: https://aws.amazon.com/app-mesh/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/app-mesh/faqs/
+  - type: Authentication
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/security-iam.html
+  - type: Console
+    url: https://console.aws.amazon.com/appmesh/
   - type: Terms of Service
     url: https://aws.amazon.com/service-terms/
   - type: Privacy Policy
     url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Status
+    url: https://health.aws.amazon.com/health/status
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
