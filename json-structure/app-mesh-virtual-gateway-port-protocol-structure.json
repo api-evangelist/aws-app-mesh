@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "http",
+    "http2",
+    "grpc"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-port-protocol-structure.json",
+  "name": "VirtualGatewayPortProtocol",
+  "description": "VirtualGatewayPortProtocol schema from AWS App Mesh"
+}

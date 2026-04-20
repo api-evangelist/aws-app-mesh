@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "certificate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerTlsCertificate"
+        },
+        {
+          "description": "A reference to an object that represents a listener's Transport Layer Security (TLS) certificate."
+        }
+      ]
+    },
+    "mode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerTlsMode"
+        },
+        {
+          "description": "<p>Specify one of the following modes.</p> <ul> <li> <p> <b/>STRICT \u2013 Listener only accepts connections with TLS enabled. </p> </li> <li> <p> <b/>PERMISSIVE \u2013 Listener accepts connections with or without TLS enabled.</p> </li> <li> <p> <b/>DISABLED \u2013 Listener only accepts connections without TLS. </p> </li> </ul>"
+        }
+      ]
+    },
+    "validation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerTlsValidationContext"
+        },
+        {
+          "description": "A reference to an object that represents a listener's Transport Layer Security (TLS) validation context."
+        }
+      ]
+    }
+  },
+  "required": [
+    "certificate",
+    "mode"
+  ],
+  "description": "An object that represents the Transport Layer Security (TLS) properties for a listener.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-listener-tls-structure.json",
+  "name": "ListenerTls"
+}

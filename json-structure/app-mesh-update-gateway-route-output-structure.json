@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "gatewayRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteData"
+        },
+        {
+          "description": "A full description of the gateway route that was updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "gatewayRoute"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-update-gateway-route-output-structure.json",
+  "name": "UpdateGatewayRouteOutput",
+  "description": "UpdateGatewayRouteOutput schema from AWS App Mesh"
+}

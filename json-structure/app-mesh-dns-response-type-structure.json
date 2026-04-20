@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "LOADBALANCER",
+    "ENDPOINTS"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-dns-response-type-structure.json",
+  "name": "DnsResponseType",
+  "description": "DnsResponseType schema from AWS App Mesh"
+}

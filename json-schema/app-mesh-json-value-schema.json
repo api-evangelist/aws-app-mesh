@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 100,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-json-value-schema.json",
+  "title": "JsonValue",
+  "description": "JsonValue schema from AWS App Mesh"
+}

@@ -1,0 +1,6 @@
+{
+  "baseEjectionDuration": "example-value",
+  "interval": "example-value",
+  "maxEjectionPercent": "example-value",
+  "maxServerErrors": "example-value"
+}

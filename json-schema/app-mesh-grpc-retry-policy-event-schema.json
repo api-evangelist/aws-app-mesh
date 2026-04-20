@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "enum": [
+    "cancelled",
+    "deadline-exceeded",
+    "internal",
+    "resource-exhausted",
+    "unavailable"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-grpc-retry-policy-event-schema.json",
+  "title": "GrpcRetryPolicyEvent",
+  "description": "GrpcRetryPolicyEvent schema from AWS App Mesh"
+}

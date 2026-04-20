@@ -1,0 +1,9 @@
+{
+  "type": "int32",
+  "minimum": 2000,
+  "maximum": 60000,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-health-check-timeout-millis-structure.json",
+  "name": "HealthCheckTimeoutMillis",
+  "description": "HealthCheckTimeoutMillis schema from AWS App Mesh"
+}

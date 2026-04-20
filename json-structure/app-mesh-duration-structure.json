@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "unit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationUnit"
+        },
+        {
+          "description": "A unit of time."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DurationValue"
+        },
+        {
+          "description": "A number of time units."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents a duration of time.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-duration-structure.json",
+  "name": "Duration"
+}

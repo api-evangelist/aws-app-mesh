@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "exact": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The exact query parameter to match on."
+        }
+      ]
+    }
+  },
+  "description": "An object representing the query parameter to match.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-query-parameter-match-structure.json",
+  "name": "QueryParameterMatch"
+}

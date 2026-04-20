@@ -1,0 +1,9 @@
+{
+  "healthyThreshold": "example-value",
+  "intervalMillis": "example-value",
+  "path": "example-value",
+  "port": "example-value",
+  "protocol": "example-value",
+  "timeoutMillis": "example-value",
+  "unhealthyThreshold": "example-value"
+}

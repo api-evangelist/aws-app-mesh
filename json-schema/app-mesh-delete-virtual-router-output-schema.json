@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualRouter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualRouterData"
+        },
+        {
+          "description": "The virtual router that was deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualRouter"
+  ],
+  "description": "<zonbook></zonbook><xhtml></xhtml>",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-delete-virtual-router-output-schema.json",
+  "title": "DeleteVirtualRouterOutput"
+}

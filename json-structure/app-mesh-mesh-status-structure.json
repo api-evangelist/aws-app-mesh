@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MeshStatusCode"
+        },
+        {
+          "description": "The current mesh status."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the status of a service mesh.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-mesh-status-structure.json",
+  "name": "MeshStatus"
+}

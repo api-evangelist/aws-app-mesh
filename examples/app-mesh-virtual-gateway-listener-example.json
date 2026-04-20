@@ -1,0 +1,6 @@
+{
+  "connectionPool": "example-value",
+  "healthCheck": "example-value",
+  "portMapping": "example-value",
+  "tls": "example-value"
+}

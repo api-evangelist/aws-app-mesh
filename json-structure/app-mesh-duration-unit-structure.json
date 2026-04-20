@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "s",
+    "ms"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-duration-unit-structure.json",
+  "name": "DurationUnit",
+  "description": "DurationUnit schema from AWS App Mesh"
+}

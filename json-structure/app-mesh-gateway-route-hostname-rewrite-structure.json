@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "defaultTargetHostname": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DefaultGatewayRouteRewrite"
+        },
+        {
+          "description": "The default target host name to write to."
+        }
+      ]
+    }
+  },
+  "description": "An object representing the gateway route host name to rewrite.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-gateway-route-hostname-rewrite-structure.json",
+  "name": "GatewayRouteHostnameRewrite"
+}

@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AwsCloudMapInstanceAttribute": "aws:AwsCloudMapInstanceAttribute",
+    "AwsCloudMapServiceDiscovery": "aws:AwsCloudMapServiceDiscovery",
+    "attributes": {
+      "@id": "aws:attributes",
+      "@type": "xsd:string"
+    },
+    "ipPreference": {
+      "@id": "aws:ipPreference",
+      "@type": "xsd:string"
+    },
+    "namespaceName": {
+      "@id": "aws:namespaceName",
+      "@type": "xsd:string"
+    },
+    "serviceName": {
+      "@id": "aws:serviceName",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "aws:key",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "aws:value",
+      "@type": "xsd:string"
+    }
+  }
+}

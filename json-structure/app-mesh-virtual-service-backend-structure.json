@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "clientPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientPolicy"
+        },
+        {
+          "description": "A reference to an object that represents the client policy for a backend."
+        }
+      ]
+    },
+    "virtualServiceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceName"
+        },
+        {
+          "description": "The name of the virtual service that is acting as a virtual node backend."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualServiceName"
+  ],
+  "description": "An object that represents a virtual service backend for a virtual node.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-service-backend-structure.json",
+  "name": "VirtualServiceBackend"
+}

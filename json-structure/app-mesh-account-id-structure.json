@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 12,
+  "maxLength": 12,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-account-id-structure.json",
+  "name": "AccountId",
+  "description": "AccountId schema from AWS App Mesh"
+}

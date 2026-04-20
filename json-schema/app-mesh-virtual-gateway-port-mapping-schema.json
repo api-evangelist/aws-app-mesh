@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortNumber"
+        },
+        {
+          "description": "The port used for the port mapping. Specify one protocol."
+        }
+      ]
+    },
+    "protocol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayPortProtocol"
+        },
+        {
+          "description": "The protocol used for the port mapping."
+        }
+      ]
+    }
+  },
+  "required": [
+    "port",
+    "protocol"
+  ],
+  "description": "An object that represents a port mapping.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-virtual-gateway-port-mapping-schema.json",
+  "title": "VirtualGatewayPortMapping"
+}

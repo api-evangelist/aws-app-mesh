@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualRouter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualRouterData"
+        },
+        {
+          "description": "A full description of the virtual router that was updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualRouter"
+  ],
+  "description": "<zonbook></zonbook><xhtml></xhtml>",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-update-virtual-router-output-structure.json",
+  "name": "UpdateVirtualRouterOutput"
+}

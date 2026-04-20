@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "secretName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewaySdsSecretName"
+        },
+        {
+          "description": "A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain."
+        }
+      ]
+    }
+  },
+  "required": [
+    "secretName"
+  ],
+  "description": "An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh<a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html\">TLS documentation</a> for more info. ",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-listener-tls-sds-certificate-structure.json",
+  "name": "VirtualGatewayListenerTlsSdsCertificate"
+}

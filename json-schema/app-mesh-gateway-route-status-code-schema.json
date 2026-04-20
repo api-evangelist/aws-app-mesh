@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "INACTIVE",
+    "DELETED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-gateway-route-status-code-schema.json",
+  "title": "GatewayRouteStatusCode",
+  "description": "GatewayRouteStatusCode schema from AWS App Mesh"
+}

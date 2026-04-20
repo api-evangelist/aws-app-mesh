@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualServiceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the virtual service that traffic is routed to."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualServiceName"
+  ],
+  "description": "An object that represents the virtual service that traffic is routed to.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-gateway-route-virtual-service-structure.json",
+  "name": "GatewayRouteVirtualService"
+}

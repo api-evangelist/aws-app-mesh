@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpGatewayRouteAction"
+        },
+        {
+          "description": "An object that represents the action to take if a match is determined."
+        }
+      ]
+    },
+    "match": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpGatewayRouteMatch"
+        },
+        {
+          "description": "An object that represents the criteria for determining a request match."
+        }
+      ]
+    }
+  },
+  "required": [
+    "action",
+    "match"
+  ],
+  "description": "An object that represents an HTTP gateway route.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-gateway-route-structure.json",
+  "name": "HttpGatewayRoute"
+}

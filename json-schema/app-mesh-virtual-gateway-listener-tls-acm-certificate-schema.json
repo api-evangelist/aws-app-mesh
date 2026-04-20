@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "certificateArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites\">Transport Layer Security (TLS)</a>."
+        }
+      ]
+    }
+  },
+  "required": [
+    "certificateArn"
+  ],
+  "description": "An object that represents an Certificate Manager certificate.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-virtual-gateway-listener-tls-acm-certificate-schema.json",
+  "title": "VirtualGatewayListenerTlsAcmCertificate"
+}

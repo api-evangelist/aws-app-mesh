@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-too-many-tags-exception-structure.json",
+  "name": "TooManyTagsException",
+  "description": "TooManyTagsException schema from AWS App Mesh"
+}

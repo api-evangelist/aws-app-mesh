@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "http",
+    "https"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-scheme-structure.json",
+  "name": "HttpScheme",
+  "description": "HttpScheme schema from AWS App Mesh"
+}

@@ -1,0 +1,6 @@
+{
+  "egressFilter": "example-value",
+  "serviceDiscovery": {
+    "ipPreference": "example-value"
+  }
+}

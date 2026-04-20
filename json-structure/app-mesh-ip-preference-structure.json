@@ -1,0 +1,13 @@
+{
+  "type": "string",
+  "enum": [
+    "IPv6_PREFERRED",
+    "IPv4_PREFERRED",
+    "IPv4_ONLY",
+    "IPv6_ONLY"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-ip-preference-structure.json",
+  "name": "IpPreference",
+  "description": "IpPreference schema from AWS App Mesh"
+}

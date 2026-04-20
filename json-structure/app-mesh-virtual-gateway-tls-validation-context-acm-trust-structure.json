@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "certificateAuthorityArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayCertificateAuthorityArns"
+        },
+        {
+          "description": "One or more ACM Amazon Resource Name (ARN)s."
+        }
+      ]
+    }
+  },
+  "required": [
+    "certificateAuthorityArns"
+  ],
+  "description": "An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-tls-validation-context-acm-trust-structure.json",
+  "name": "VirtualGatewayTlsValidationContextAcmTrust"
+}

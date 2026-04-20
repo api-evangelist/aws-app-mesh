@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RouteStatusCode"
+        },
+        {
+          "description": "The current status for the route."
+        }
+      ]
+    }
+  },
+  "required": [
+    "status"
+  ],
+  "description": "An object that represents the current status of a route.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-route-status-structure.json",
+  "name": "RouteStatus"
+}

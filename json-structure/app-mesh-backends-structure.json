@@ -1,0 +1,23 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "virtualService": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VirtualServiceBackend"
+          },
+          {
+            "description": "Specifies a virtual service to use as a backend. "
+          }
+        ]
+      }
+    },
+    "description": "An object that represents the backends that a virtual node is expected to send outbound traffic to."
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-backends-structure.json",
+  "name": "Backends",
+  "description": "Backends schema from AWS App Mesh"
+}

@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "exact": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderMatch"
+        },
+        {
+          "description": "The value sent by the client must match the specified value exactly."
+        }
+      ]
+    },
+    "prefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderMatch"
+        },
+        {
+          "description": "The value sent by the client must begin with the specified characters."
+        }
+      ]
+    },
+    "range": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MatchRange"
+        },
+        {
+          "description": "An object that represents the range of values to match on."
+        }
+      ]
+    },
+    "regex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderMatch"
+        },
+        {
+          "description": "The value sent by the client must include the specified characters."
+        }
+      ]
+    },
+    "suffix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderMatch"
+        },
+        {
+          "description": "The value sent by the client must end with the specified characters."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the method and value to match with the header value sent in a request. Specify one match method.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-header-match-method-schema.json",
+  "title": "HeaderMatchMethod"
+}

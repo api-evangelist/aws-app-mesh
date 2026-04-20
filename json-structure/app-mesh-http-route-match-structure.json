@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "headers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpRouteHeaders"
+        },
+        {
+          "description": "The client request headers to match on."
+        }
+      ]
+    },
+    "method": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpMethod"
+        },
+        {
+          "description": "The client request method to match on. Specify only one."
+        }
+      ]
+    },
+    "path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpPathMatch"
+        },
+        {
+          "description": "The client request path to match on."
+        }
+      ]
+    },
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerPort"
+        },
+        {
+          "description": "The port number to match on."
+        }
+      ]
+    },
+    "prefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>."
+        }
+      ]
+    },
+    "queryParameters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpQueryParameters"
+        },
+        {
+          "description": "The client request query parameters to match on."
+        }
+      ]
+    },
+    "scheme": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpScheme"
+        },
+        {
+          "description": "The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the requirements for a route to match HTTP requests for a virtual router.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-route-match-structure.json",
+  "name": "HttpRouteMatch"
+}

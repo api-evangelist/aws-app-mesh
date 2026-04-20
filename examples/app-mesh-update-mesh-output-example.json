@@ -1,0 +1,8 @@
+{
+  "mesh": {
+    "meshName": "my-resource-01",
+    "metadata": "example-value",
+    "spec": "example-value",
+    "status": "example-value"
+  }
+}

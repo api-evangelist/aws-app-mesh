@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualNodeStatusCode"
+        },
+        {
+          "description": "The current status of the virtual node."
+        }
+      ]
+    }
+  },
+  "required": [
+    "status"
+  ],
+  "description": "An object that represents the current status of the virtual node.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-node-status-structure.json",
+  "name": "VirtualNodeStatus"
+}

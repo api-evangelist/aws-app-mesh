@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "httpRetryEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpRetryPolicyEvents"
+        },
+        {
+          "description": "<p>Specify at least one of the following values.</p> <ul> <li> <p> <b>server-error</b> \u2013 HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> <li> <p> <b>gateway-error</b> \u2013 HTTP status codes 502, 503, and 504</p> </li> <li> <p> <b>client-error</b> \u2013 HTTP status code 409</p> </li> <li> <p> <b>stream-error</b> \u2013 Retry on refused stream</p> </li> </ul>"
+        }
+      ]
+    },
+    "maxRetries": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxRetries"
+        },
+        {
+          "description": "The maximum number of retry attempts."
+        }
+      ]
+    },
+    "perRetryTimeout": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Duration"
+        },
+        {
+          "description": "The timeout for each retry attempt."
+        }
+      ]
+    },
+    "tcpRetryEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TcpRetryPolicyEvents"
+        },
+        {
+          "description": "Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable."
+        }
+      ]
+    }
+  },
+  "required": [
+    "maxRetries",
+    "perRetryTimeout"
+  ],
+  "description": "An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href=\"https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on\">Envoy documentation</a>.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-http-retry-policy-schema.json",
+  "title": "HttpRetryPolicy"
+}

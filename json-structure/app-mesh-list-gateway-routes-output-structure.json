@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "gatewayRoutes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteList"
+        },
+        {
+          "description": "The list of existing gateway routes for the specified service mesh and virtual gateway."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return."
+        }
+      ]
+    }
+  },
+  "required": [
+    "gatewayRoutes"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-list-gateway-routes-output-structure.json",
+  "name": "ListGatewayRoutesOutput",
+  "description": "ListGatewayRoutesOutput schema from AWS App Mesh"
+}

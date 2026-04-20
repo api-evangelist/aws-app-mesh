@@ -1,0 +1,8 @@
+{
+  "connectionPool": "example-value",
+  "healthCheck": "example-value",
+  "outlierDetection": "example-value",
+  "portMapping": "example-value",
+  "timeout": "example-value",
+  "tls": "example-value"
+}

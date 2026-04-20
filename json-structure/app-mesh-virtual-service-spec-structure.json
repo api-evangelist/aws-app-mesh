@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "provider": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualServiceProvider"
+        },
+        {
+          "description": "The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the specification of a virtual service.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-service-spec-structure.json",
+  "name": "VirtualServiceSpec"
+}

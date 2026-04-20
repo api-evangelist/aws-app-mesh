@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "accessLog": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccessLog"
+        },
+        {
+          "description": "The access log configuration for a virtual node."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the logging information for a virtual node.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-logging-schema.json",
+  "title": "Logging"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "file": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayFileAccessLog"
+        },
+        {
+          "description": "The file object to send virtual gateway access logs to."
+        }
+      ]
+    }
+  },
+  "description": "The access log configuration for a virtual gateway.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-access-log-structure.json",
+  "name": "VirtualGatewayAccessLog"
+}

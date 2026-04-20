@@ -1,0 +1,207 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "AWS App Mesh"
+  description: "Vocabulary for AWS App Mesh (deprecated) covering service mesh resources, traffic routing, and observability across operational and capability dimensions."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: app-mesh
+      version: "2019-01-25"
+      baseUrl: https://appmesh.{region}.amazonaws.com
+      status: deprecated
+
+  resources:
+    - name: meshes
+      apis:
+        - app-mesh
+      actions:
+        - list
+        - create
+        - describe
+        - update
+        - delete
+    - name: virtual-nodes
+      apis:
+        - app-mesh
+      actions:
+        - list
+        - create
+        - describe
+        - update
+        - delete
+    - name: virtual-services
+      apis:
+        - app-mesh
+      actions:
+        - list
+        - create
+        - describe
+        - update
+        - delete
+    - name: virtual-routers
+      apis:
+        - app-mesh
+      actions:
+        - list
+        - create
+        - describe
+        - update
+        - delete
+    - name: routes
+      apis:
+        - app-mesh
+      actions:
+        - list
+        - create
+        - describe
+        - update
+        - delete
+    - name: virtual-gateways
+      apis:
+        - app-mesh
+      actions:
+        - list
+        - create
+        - describe
+        - update
+        - delete
+    - name: gateway-routes
+      apis:
+        - app-mesh
+      actions:
+        - list
+        - create
+        - describe
+        - update
+        - delete
+
+  actions:
+    - name: list
+      methods:
+        - GET
+      pattern: read
+    - name: describe
+      methods:
+        - GET
+      pattern: read
+    - name: create
+      methods:
+        - PUT
+      pattern: write
+    - name: update
+      methods:
+        - PUT
+      pattern: write
+    - name: delete
+      methods:
+        - DELETE
+      pattern: destructive
+
+  schemas:
+    core:
+      - name: MeshData
+        description: Service mesh configuration and status
+      - name: VirtualNodeData
+        description: Virtual node configuration with listeners and backends
+      - name: VirtualServiceData
+        description: Virtual service with provider configuration
+      - name: VirtualRouterData
+        description: Virtual router with listener configuration
+      - name: RouteData
+        description: Traffic routing rule with match and action configuration
+    gateway:
+      - name: VirtualGatewayData
+        description: Virtual gateway for ingress traffic management
+      - name: GatewayRouteData
+        description: Gateway route matching HTTP/gRPC traffic to virtual services
+
+  authentication:
+    schemes:
+      - name: AWS SigV4
+        type: apikey
+        description: AWS Signature Version 4 request signing
+
+capability:
+  workflows:
+    - name: Service Mesh Workflow
+      file: capabilities/service-mesh-workflow.yaml
+      description: Manage App Mesh service meshes, virtual nodes, services, routers, and gateways
+      apis:
+        - app-mesh
+      tools: 6
+      personas:
+        - Platform Engineer
+
+  personas:
+    - id: platform-engineer
+      name: Platform Engineer
+      description: Manages service mesh infrastructure and inter-service communication
+      workflows:
+        - Service Mesh Workflow
+
+  domains:
+    - name: Service Mesh Management
+      description: Creating and configuring service meshes and their components
+      resources:
+        - meshes
+        - virtual-nodes
+        - virtual-services
+    - name: Traffic Routing
+      description: Configuring routing rules for service-to-service communication
+      resources:
+        - virtual-routers
+        - routes
+    - name: Ingress Management
+      description: Managing gateway routing for external traffic ingress
+      resources:
+        - virtual-gateways
+        - gateway-routes
+
+  namespaces:
+    - name: app-mesh
+      type: consumed
+      baseUri: https://appmesh.{region}.amazonaws.com
+    - name: app-mesh-workflow-api
+      type: rest-exposed
+      port: 8080
+    - name: app-mesh-workflow-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - name: AWS_ACCESS_KEY_ID
+      workflows:
+        - Service Mesh Workflow
+    - name: AWS_SECRET_ACCESS_KEY
+      workflows:
+        - Service Mesh Workflow
+    - name: AWS_REGION
+      workflows:
+        - Service Mesh Workflow
+
+crossReference:
+  - resource: meshes
+    operations:
+      - ListMeshes
+      - CreateMesh
+      - DescribeMesh
+      - UpdateMesh
+      - DeleteMesh
+    workflows:
+      - Service Mesh Workflow
+    personas:
+      - Platform Engineer
+  - resource: virtual-nodes
+    operations:
+      - ListVirtualNodes
+      - CreateVirtualNode
+      - DescribeVirtualNode
+      - UpdateVirtualNode
+      - DeleteVirtualNode
+    workflows:
+      - Service Mesh Workflow
+    personas:
+      - Platform Engineer

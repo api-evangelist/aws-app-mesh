@@ -1,0 +1,56 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "connectionPool": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VirtualGatewayConnectionPool"
+          },
+          {
+            "description": "The connection pool information for the virtual gateway listener."
+          }
+        ]
+      },
+      "healthCheck": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VirtualGatewayHealthCheckPolicy"
+          },
+          {
+            "description": "The health check information for the listener."
+          }
+        ]
+      },
+      "portMapping": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VirtualGatewayPortMapping"
+          },
+          {
+            "description": "The port mapping information for the listener."
+          }
+        ]
+      },
+      "tls": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VirtualGatewayListenerTls"
+          },
+          {
+            "description": "A reference to an object that represents the Transport Layer Security (TLS) properties for the listener."
+          }
+        ]
+      }
+    },
+    "required": [
+      "portMapping"
+    ],
+    "description": "An object that represents a listener for a virtual gateway."
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-listeners-structure.json",
+  "name": "VirtualGatewayListeners",
+  "description": "VirtualGatewayListeners schema from AWS App Mesh"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "ACTIVE",
+    "INACTIVE",
+    "DELETED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-mesh-status-code-structure.json",
+  "name": "MeshStatusCode",
+  "description": "MeshStatusCode schema from AWS App Mesh"
+}

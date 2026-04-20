@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "properties": {
+    "backendDefaults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayBackendDefaults"
+        },
+        {
+          "description": "A reference to an object that represents the defaults for backends."
+        }
+      ]
+    },
+    "listeners": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayListeners"
+        },
+        {
+          "description": "The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener."
+        }
+      ]
+    },
+    "logging": {
+      "type": "object",
+      "properties": {
+        "accessLog": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/VirtualGatewayAccessLog"
+            },
+            {
+              "description": "The access log configuration."
+            }
+          ]
+        }
+      },
+      "description": "An object that represents logging information."
+    }
+  },
+  "required": [
+    "listeners"
+  ],
+  "description": "An object that represents the specification of a service mesh resource.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-spec-structure.json",
+  "name": "VirtualGatewaySpec"
+}

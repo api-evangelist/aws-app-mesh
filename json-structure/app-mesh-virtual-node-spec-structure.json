@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "backendDefaults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BackendDefaults"
+        },
+        {
+          "description": "A reference to an object that represents the defaults for backends."
+        }
+      ]
+    },
+    "backends": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Backends"
+        },
+        {
+          "description": "The backends that the virtual node is expected to send outbound traffic to."
+        }
+      ]
+    },
+    "listeners": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Listeners"
+        },
+        {
+          "description": "The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener."
+        }
+      ]
+    },
+    "logging": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Logging"
+        },
+        {
+          "description": "The inbound and outbound access logging information for the virtual node."
+        }
+      ]
+    },
+    "serviceDiscovery": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceDiscovery"
+        },
+        {
+          "description": "The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the specification of a virtual node.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-node-spec-structure.json",
+  "name": "VirtualNodeSpec"
+}

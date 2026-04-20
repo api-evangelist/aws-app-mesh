@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "gatewayRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteData"
+        },
+        {
+          "description": "The gateway route that was deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "gatewayRoute"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-delete-gateway-route-output-structure.json",
+  "name": "DeleteGatewayRouteOutput",
+  "description": "DeleteGatewayRouteOutput schema from AWS App Mesh"
+}

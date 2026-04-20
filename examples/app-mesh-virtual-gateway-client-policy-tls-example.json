@@ -1,0 +1,6 @@
+{
+  "certificate": "example-value",
+  "enforce": "example-value",
+  "ports": "example-value",
+  "validation": "my-resource-01"
+}

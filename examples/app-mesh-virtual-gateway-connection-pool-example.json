@@ -1,0 +1,5 @@
+{
+  "grpc": "example-value",
+  "http": "example-value",
+  "http2": "example-value"
+}

@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "rewrite": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GrpcGatewayRouteRewrite"
+        },
+        {
+          "description": "The gateway route action to rewrite."
+        }
+      ]
+    },
+    "target": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteTarget"
+        },
+        {
+          "description": "An object that represents the target that traffic is routed to when a request matches the gateway route."
+        }
+      ]
+    }
+  },
+  "required": [
+    "target"
+  ],
+  "description": "An object that represents the action to take if a match is determined.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-grpc-gateway-route-action-schema.json",
+  "title": "GrpcGatewayRouteAction"
+}

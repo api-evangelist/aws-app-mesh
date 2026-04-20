@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "mesh": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MeshData"
+        },
+        {
+          "description": "The service mesh that was deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "mesh"
+  ],
+  "description": "<zonbook></zonbook><xhtml></xhtml>",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-delete-mesh-output-structure.json",
+  "name": "DeleteMeshOutput"
+}

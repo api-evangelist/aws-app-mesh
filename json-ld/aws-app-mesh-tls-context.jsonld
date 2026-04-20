@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "TlsValidationContextSdsTrust": "aws:TlsValidationContextSdsTrust",
+    "TlsValidationContextTrust": "aws:TlsValidationContextTrust",
+    "TlsValidationContextAcmTrust": "aws:TlsValidationContextAcmTrust",
+    "TlsValidationContext": "aws:TlsValidationContext",
+    "TlsValidationContextFileTrust": "aws:TlsValidationContextFileTrust",
+    "subjectAlternativeNames": {
+      "@id": "aws:subjectAlternativeNames",
+      "@type": "xsd:string"
+    },
+    "trust": {
+      "@id": "aws:trust",
+      "@type": "xsd:string"
+    },
+    "certificateChain": {
+      "@id": "aws:certificateChain",
+      "@type": "xsd:string"
+    },
+    "secretName": {
+      "@id": "aws:secretName",
+      "@type": "xsd:string"
+    },
+    "acm": {
+      "@id": "aws:acm",
+      "@type": "xsd:string"
+    },
+    "file": {
+      "@id": "aws:file",
+      "@type": "xsd:string"
+    },
+    "sds": {
+      "@id": "aws:sds",
+      "@type": "xsd:string"
+    },
+    "certificateAuthorityArns": {
+      "@id": "aws:certificateAuthorityArns",
+      "@type": "xsd:string"
+    }
+  }
+}

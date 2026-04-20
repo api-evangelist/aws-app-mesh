@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "exact": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpPathExact"
+        },
+        {
+          "description": "The exact path to match on."
+        }
+      ]
+    },
+    "regex": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpPathRegex"
+        },
+        {
+          "description": "The regex used to match the path."
+        }
+      ]
+    }
+  },
+  "description": "An object representing the path to match in the request.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-path-match-structure.json",
+  "name": "HttpPathMatch"
+}

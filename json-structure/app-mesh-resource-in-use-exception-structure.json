@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-resource-in-use-exception-structure.json",
+  "name": "ResourceInUseException",
+  "description": "ResourceInUseException schema from AWS App Mesh"
+}

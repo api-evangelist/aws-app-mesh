@@ -1,0 +1,36 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "match": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/QueryParameterMatch"
+          },
+          {
+            "description": "The query parameter to match on."
+          }
+        ]
+      },
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/QueryParameterName"
+          },
+          {
+            "description": "A name for the query parameter that will be matched on."
+          }
+        ]
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "description": "An object that represents the query parameter in the request."
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-http-query-parameters-schema.json",
+  "title": "HttpQueryParameters",
+  "description": "HttpQueryParameters schema from AWS App Mesh"
+}

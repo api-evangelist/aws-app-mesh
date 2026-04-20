@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "EgressFilter": "aws:EgressFilter",
+    "type": {
+      "@id": "aws:type",
+      "@type": "xsd:string"
+    }
+  }
+}

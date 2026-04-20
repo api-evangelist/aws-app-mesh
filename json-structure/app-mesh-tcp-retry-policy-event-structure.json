@@ -1,0 +1,10 @@
+{
+  "type": "string",
+  "enum": [
+    "connection-error"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-tcp-retry-policy-event-structure.json",
+  "name": "TcpRetryPolicyEvent",
+  "description": "TcpRetryPolicyEvent schema from AWS App Mesh"
+}

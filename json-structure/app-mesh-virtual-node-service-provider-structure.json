@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualNodeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the virtual node that is acting as a service provider."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualNodeName"
+  ],
+  "description": "An object that represents a virtual node service provider.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-node-service-provider-structure.json",
+  "name": "VirtualNodeServiceProvider"
+}

@@ -1,0 +1,10 @@
+{
+  "exact": "example-value",
+  "prefix": "example-value",
+  "range": {
+    "end": "example-value",
+    "start": "example-value"
+  },
+  "regex": "example-value",
+  "suffix": "example-value"
+}

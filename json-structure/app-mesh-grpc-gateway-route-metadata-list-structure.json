@@ -1,0 +1,46 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "invert": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Boolean"
+          },
+          {
+            "description": "Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>."
+          }
+        ]
+      },
+      "match": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GrpcMetadataMatchMethod"
+          },
+          {
+            "description": "The criteria for determining a metadata match."
+          }
+        ]
+      },
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/HeaderName"
+          },
+          {
+            "description": "A name for the gateway route metadata."
+          }
+        ]
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "description": "An object representing the metadata of the gateway route."
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-grpc-gateway-route-metadata-list-structure.json",
+  "name": "GrpcGatewayRouteMetadataList",
+  "description": "GrpcGatewayRouteMetadataList schema from AWS App Mesh"
+}

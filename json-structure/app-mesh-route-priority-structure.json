@@ -1,0 +1,9 @@
+{
+  "type": "int32",
+  "minimum": 0,
+  "maximum": 1000,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-route-priority-structure.json",
+  "name": "RoutePriority",
+  "description": "RoutePriority schema from AWS App Mesh"
+}

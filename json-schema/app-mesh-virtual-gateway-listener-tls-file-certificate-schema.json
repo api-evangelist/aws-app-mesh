@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "certificateChain": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilePath"
+        },
+        {
+          "description": "The certificate chain for the certificate."
+        }
+      ]
+    },
+    "privateKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilePath"
+        },
+        {
+          "description": "The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on."
+        }
+      ]
+    }
+  },
+  "required": [
+    "certificateChain",
+    "privateKey"
+  ],
+  "description": "An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites\">Transport Layer Security (TLS)</a>.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-virtual-gateway-listener-tls-file-certificate-schema.json",
+  "title": "VirtualGatewayListenerTlsFileCertificate"
+}

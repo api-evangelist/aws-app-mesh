@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "acm": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayTlsValidationContextAcmTrust"
+        },
+        {
+          "description": "A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate."
+        }
+      ]
+    },
+    "file": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayTlsValidationContextFileTrust"
+        },
+        {
+          "description": "An object that represents a Transport Layer Security (TLS) validation context trust for a local file."
+        }
+      ]
+    },
+    "sds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayTlsValidationContextSdsTrust"
+        },
+        {
+          "description": "A reference to an object that represents a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents a Transport Layer Security (TLS) validation context trust.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-tls-validation-context-trust-structure.json",
+  "name": "VirtualGatewayTlsValidationContextTrust"
+}

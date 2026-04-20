@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "gatewayRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteData"
+        },
+        {
+          "description": "The full description of your gateway route."
+        }
+      ]
+    }
+  },
+  "required": [
+    "gatewayRoute"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-describe-gateway-route-output-structure.json",
+  "name": "DescribeGatewayRouteOutput",
+  "description": "DescribeGatewayRouteOutput schema from AWS App Mesh"
+}

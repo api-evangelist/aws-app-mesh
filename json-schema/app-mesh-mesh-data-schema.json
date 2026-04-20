@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "meshName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the service mesh."
+        }
+      ]
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceMetadata"
+        },
+        {
+          "description": "The associated metadata for the service mesh."
+        }
+      ]
+    },
+    "spec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MeshSpec"
+        },
+        {
+          "description": "The associated specification for the service mesh."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MeshStatus"
+        },
+        {
+          "description": "The status of the service mesh."
+        }
+      ]
+    }
+  },
+  "required": [
+    "meshName",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "description": "An object that represents a service mesh returned by a describe operation.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-mesh-data-schema.json",
+  "title": "MeshData"
+}

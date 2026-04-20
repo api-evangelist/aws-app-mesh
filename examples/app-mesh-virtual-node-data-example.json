@@ -1,0 +1,7 @@
+{
+  "meshName": "my-resource-01",
+  "metadata": "example-value",
+  "spec": "example-value",
+  "status": "example-value",
+  "virtualNodeName": "my-resource-01"
+}

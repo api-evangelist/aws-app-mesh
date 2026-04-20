@@ -1,0 +1,46 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "portMapping": {
+        "type": "object",
+        "properties": {
+          "port": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PortNumber"
+              },
+              {
+                "description": "The port used for the port mapping."
+              }
+            ]
+          },
+          "protocol": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PortProtocol"
+              },
+              {
+                "description": "The protocol used for the port mapping. Specify one protocol."
+              }
+            ]
+          }
+        },
+        "required": [
+          "port",
+          "protocol"
+        ],
+        "description": "An object that represents a port mapping."
+      }
+    },
+    "required": [
+      "portMapping"
+    ],
+    "description": "An object that represents a virtual router listener."
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-router-listeners-structure.json",
+  "name": "VirtualRouterListeners",
+  "description": "VirtualRouterListeners schema from AWS App Mesh"
+}

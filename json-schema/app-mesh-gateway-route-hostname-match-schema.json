@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "exact": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExactHostName"
+        },
+        {
+          "description": "The exact host name to match on."
+        }
+      ]
+    },
+    "suffix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SuffixHostname"
+        },
+        {
+          "description": "The specified ending characters of the host name to match on."
+        }
+      ]
+    }
+  },
+  "description": "An object representing the gateway route host name to match.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-gateway-route-hostname-match-schema.json",
+  "title": "GatewayRouteHostnameMatch"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "int32",
+  "minimum": 2,
+  "maximum": 10,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-health-check-threshold-structure.json",
+  "name": "VirtualGatewayHealthCheckThreshold",
+  "description": "VirtualGatewayHealthCheckThreshold schema from AWS App Mesh"
+}

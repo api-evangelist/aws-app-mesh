@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "maxConnections": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxConnections"
+        },
+        {
+          "description": "Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster."
+        }
+      ]
+    }
+  },
+  "required": [
+    "maxConnections"
+  ],
+  "description": "An object that represents a type of connection pool.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-node-tcp-connection-pool-structure.json",
+  "name": "VirtualNodeTcpConnectionPool"
+}

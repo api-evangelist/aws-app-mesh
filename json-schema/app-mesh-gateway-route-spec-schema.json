@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "grpcRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GrpcGatewayRoute"
+        },
+        {
+          "description": "An object that represents the specification of a gRPC gateway route."
+        }
+      ]
+    },
+    "http2Route": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpGatewayRoute"
+        },
+        {
+          "description": "An object that represents the specification of an HTTP/2 gateway route."
+        }
+      ]
+    },
+    "httpRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpGatewayRoute"
+        },
+        {
+          "description": "An object that represents the specification of an HTTP gateway route."
+        }
+      ]
+    },
+    "priority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRoutePriority"
+        },
+        {
+          "description": "The ordering of the gateway routes spec."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents a gateway route specification. Specify one gateway route type.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-gateway-route-spec-schema.json",
+  "title": "GatewayRouteSpec"
+}

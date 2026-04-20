@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "meshName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the service mesh that the virtual router resides in."
+        }
+      ]
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceMetadata"
+        },
+        {
+          "description": "The associated metadata for the virtual router."
+        }
+      ]
+    },
+    "spec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualRouterSpec"
+        },
+        {
+          "description": "The specifications of the virtual router."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualRouterStatus"
+        },
+        {
+          "description": "The current status of the virtual router."
+        }
+      ]
+    },
+    "virtualRouterName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the virtual router."
+        }
+      ]
+    }
+  },
+  "required": [
+    "meshName",
+    "metadata",
+    "spec",
+    "status",
+    "virtualRouterName"
+  ],
+  "description": "An object that represents a virtual router returned by a describe operation.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-virtual-router-data-schema.json",
+  "title": "VirtualRouterData"
+}

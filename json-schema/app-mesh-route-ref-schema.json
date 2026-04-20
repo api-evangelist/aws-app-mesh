@@ -1,0 +1,110 @@
+{
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The full Amazon Resource Name (ARN) for the route."
+        }
+      ]
+    },
+    "createdAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The Unix epoch timestamp in seconds for when the resource was created."
+        }
+      ]
+    },
+    "lastUpdatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The Unix epoch timestamp in seconds for when the resource was last updated."
+        }
+      ]
+    },
+    "meshName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the service mesh that the route resides in."
+        }
+      ]
+    },
+    "meshOwner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+        }
+      ]
+    },
+    "resourceOwner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+        }
+      ]
+    },
+    "routeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the route."
+        }
+      ]
+    },
+    "version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated."
+        }
+      ]
+    },
+    "virtualRouterName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The virtual router that the route is associated with."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn",
+    "createdAt",
+    "lastUpdatedAt",
+    "meshName",
+    "meshOwner",
+    "resourceOwner",
+    "routeName",
+    "version",
+    "virtualRouterName"
+  ],
+  "description": "An object that represents a route returned by a list operation.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-route-ref-schema.json",
+  "title": "RouteRef"
+}

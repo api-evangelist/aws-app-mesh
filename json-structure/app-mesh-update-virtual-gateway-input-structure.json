@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed."
+        }
+      ]
+    },
+    "spec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewaySpec"
+        },
+        {
+          "description": "The new virtual gateway specification to apply. This overwrites the existing data."
+        }
+      ]
+    }
+  },
+  "required": [
+    "spec"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-update-virtual-gateway-input-structure.json",
+  "name": "UpdateVirtualGatewayInput",
+  "description": "UpdateVirtualGatewayInput schema from AWS App Mesh"
+}

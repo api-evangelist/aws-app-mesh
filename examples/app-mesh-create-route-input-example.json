@@ -1,0 +1,6 @@
+{
+  "clientToken": "example-value",
+  "routeName": "my-resource-01",
+  "spec": "example-value",
+  "tags": "example-value"
+}

@@ -1,0 +1,4 @@
+{
+  "idle": "my-resource-01",
+  "perRequest": "example-value"
+}

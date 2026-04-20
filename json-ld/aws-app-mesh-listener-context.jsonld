@@ -1,0 +1,106 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ListenerTlsCertificate": "aws:ListenerTlsCertificate",
+    "ListenerTimeout": "aws:ListenerTimeout",
+    "ListenerTlsFileCertificate": "aws:ListenerTlsFileCertificate",
+    "ListenerTlsSdsCertificate": "aws:ListenerTlsSdsCertificate",
+    "ListenerTlsValidationContextTrust": "aws:ListenerTlsValidationContextTrust",
+    "ListenerTls": "aws:ListenerTls",
+    "ListenerTlsValidationContext": "aws:ListenerTlsValidationContext",
+    "ListenerTlsAcmCertificate": "aws:ListenerTlsAcmCertificate",
+    "Listener": "aws:Listener",
+    "acm": {
+      "@id": "aws:acm",
+      "@type": "xsd:string"
+    },
+    "file": {
+      "@id": "aws:file",
+      "@type": "xsd:string"
+    },
+    "sds": {
+      "@id": "aws:sds",
+      "@type": "xsd:string"
+    },
+    "connectionPool": {
+      "@id": "aws:connectionPool",
+      "@type": "xsd:string"
+    },
+    "healthCheck": {
+      "@id": "aws:healthCheck",
+      "@type": "xsd:string"
+    },
+    "outlierDetection": {
+      "@id": "aws:outlierDetection",
+      "@type": "xsd:string"
+    },
+    "portMapping": {
+      "@id": "aws:portMapping",
+      "@type": "xsd:string"
+    },
+    "timeout": {
+      "@id": "aws:timeout",
+      "@type": "xsd:string"
+    },
+    "tls": {
+      "@id": "aws:tls",
+      "@type": "xsd:string"
+    },
+    "certificate": {
+      "@id": "aws:certificate",
+      "@type": "xsd:string"
+    },
+    "mode": {
+      "@id": "aws:mode",
+      "@type": "xsd:string"
+    },
+    "validation": {
+      "@id": "aws:validation",
+      "@type": "xsd:string"
+    },
+    "secretName": {
+      "@id": "aws:secretName",
+      "@type": "xsd:string"
+    },
+    "subjectAlternativeNames": {
+      "@id": "aws:subjectAlternativeNames",
+      "@type": "xsd:string"
+    },
+    "trust": {
+      "@id": "aws:trust",
+      "@type": "xsd:string"
+    },
+    "certificateChain": {
+      "@id": "aws:certificateChain",
+      "@type": "xsd:string"
+    },
+    "privateKey": {
+      "@id": "aws:privateKey",
+      "@type": "xsd:string"
+    },
+    "grpc": {
+      "@id": "aws:grpc",
+      "@type": "xsd:string"
+    },
+    "http": {
+      "@id": "aws:http",
+      "@type": "xsd:string"
+    },
+    "http2": {
+      "@id": "aws:http2",
+      "@type": "xsd:string"
+    },
+    "tcp": {
+      "@id": "aws:tcp",
+      "@type": "xsd:string"
+    },
+    "certificateArn": {
+      "@id": "aws:certificateArn",
+      "@type": "xsd:string"
+    }
+  }
+}

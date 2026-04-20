@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Logging": "aws:Logging",
+    "LoggingFormat": "aws:LoggingFormat",
+    "accessLog": {
+      "@id": "aws:accessLog",
+      "@type": "xsd:string"
+    },
+    "json": {
+      "@id": "aws:json",
+      "@type": "xsd:string"
+    },
+    "text": {
+      "@id": "aws:text",
+      "@type": "xsd:string"
+    }
+  }
+}

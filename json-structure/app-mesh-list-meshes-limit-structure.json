@@ -1,0 +1,9 @@
+{
+  "type": "int32",
+  "minimum": 1,
+  "maximum": 100,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-list-meshes-limit-structure.json",
+  "name": "ListMeshesLimit",
+  "description": "ListMeshesLimit schema from AWS App Mesh"
+}

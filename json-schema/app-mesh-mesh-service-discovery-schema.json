@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "ipPreference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpPreference"
+        },
+        {
+          "description": "The IP version to use to control traffic within the mesh."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the service discovery information for a service mesh.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-mesh-service-discovery-schema.json",
+  "title": "MeshServiceDiscovery"
+}

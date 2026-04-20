@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "RouteData": "aws:RouteData",
+    "RouteStatus": "aws:RouteStatus",
+    "RouteRef": "aws:RouteRef",
+    "RouteSpec": "aws:RouteSpec",
+    "status": {
+      "@id": "aws:status",
+      "@type": "xsd:string"
+    },
+    "grpcRoute": {
+      "@id": "aws:grpcRoute",
+      "@type": "xsd:string"
+    },
+    "http2Route": {
+      "@id": "aws:http2Route",
+      "@type": "xsd:string"
+    },
+    "httpRoute": {
+      "@id": "aws:httpRoute",
+      "@type": "xsd:string"
+    },
+    "priority": {
+      "@id": "aws:priority",
+      "@type": "xsd:string"
+    },
+    "tcpRoute": {
+      "@id": "aws:tcpRoute",
+      "@type": "xsd:string"
+    },
+    "meshName": {
+      "@id": "aws:meshName",
+      "@type": "xsd:string"
+    },
+    "metadata": {
+      "@id": "aws:metadata",
+      "@type": "xsd:string"
+    },
+    "routeName": {
+      "@id": "aws:routeName",
+      "@type": "xsd:string"
+    },
+    "spec": {
+      "@id": "aws:spec",
+      "@type": "xsd:string"
+    },
+    "virtualRouterName": {
+      "@id": "aws:virtualRouterName",
+      "@type": "xsd:string"
+    },
+    "arn": {
+      "@id": "aws:arn",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "aws:createdAt",
+      "@type": "xsd:string"
+    },
+    "lastUpdatedAt": {
+      "@id": "aws:lastUpdatedAt",
+      "@type": "xsd:string"
+    },
+    "meshOwner": {
+      "@id": "aws:meshOwner",
+      "@type": "xsd:string"
+    },
+    "resourceOwner": {
+      "@id": "aws:resourceOwner",
+      "@type": "xsd:string"
+    },
+    "version": "schema:version"
+  }
+}

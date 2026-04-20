@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-bad-request-exception-structure.json",
+  "name": "BadRequestException",
+  "description": "BadRequestException schema from AWS App Mesh"
+}

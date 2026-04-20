@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JsonKey"
+        },
+        {
+          "description": "The specified key for the JSON."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JsonValue"
+        },
+        {
+          "description": "The specified value for the JSON."
+        }
+      ]
+    }
+  },
+  "required": [
+    "key",
+    "value"
+  ],
+  "description": "An object that represents the key value pairs for the JSON.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-json-format-ref-schema.json",
+  "title": "JsonFormatRef"
+}

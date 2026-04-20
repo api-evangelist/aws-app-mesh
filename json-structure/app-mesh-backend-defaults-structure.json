@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "clientPolicy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientPolicy"
+        },
+        {
+          "description": "A reference to an object that represents a client policy."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the default properties for a backend.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-backend-defaults-structure.json",
+  "name": "BackendDefaults"
+}

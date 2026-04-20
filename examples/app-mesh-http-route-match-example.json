@@ -1,0 +1,9 @@
+{
+  "headers": "example-value",
+  "method": "example-value",
+  "path": "example-value",
+  "port": "example-value",
+  "prefix": "example-value",
+  "queryParameters": "example-value",
+  "scheme": "example-value"
+}

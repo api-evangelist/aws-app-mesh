@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "maxRequests": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MaxRequests"
+        },
+        {
+          "description": "Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster."
+        }
+      ]
+    }
+  },
+  "required": [
+    "maxRequests"
+  ],
+  "description": "An object that represents a type of connection pool.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-node-http2-connection-pool-structure.json",
+  "name": "VirtualNodeHttp2ConnectionPool"
+}

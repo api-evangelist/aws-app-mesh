@@ -1,0 +1,63 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "MeshStatus": "aws:MeshStatus",
+    "MeshData": "aws:MeshData",
+    "MeshRef": "aws:MeshRef",
+    "MeshSpec": "aws:MeshSpec",
+    "MeshServiceDiscovery": "aws:MeshServiceDiscovery",
+    "meshName": {
+      "@id": "aws:meshName",
+      "@type": "xsd:string"
+    },
+    "metadata": {
+      "@id": "aws:metadata",
+      "@type": "xsd:string"
+    },
+    "spec": {
+      "@id": "aws:spec",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "aws:status",
+      "@type": "xsd:string"
+    },
+    "ipPreference": {
+      "@id": "aws:ipPreference",
+      "@type": "xsd:string"
+    },
+    "egressFilter": {
+      "@id": "aws:egressFilter",
+      "@type": "xsd:string"
+    },
+    "serviceDiscovery": {
+      "@id": "aws:serviceDiscovery",
+      "@type": "@id"
+    },
+    "arn": {
+      "@id": "aws:arn",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "aws:createdAt",
+      "@type": "xsd:string"
+    },
+    "lastUpdatedAt": {
+      "@id": "aws:lastUpdatedAt",
+      "@type": "xsd:string"
+    },
+    "meshOwner": {
+      "@id": "aws:meshOwner",
+      "@type": "xsd:string"
+    },
+    "resourceOwner": {
+      "@id": "aws:resourceOwner",
+      "@type": "xsd:string"
+    },
+    "version": "schema:version"
+  }
+}

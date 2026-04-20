@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GrpcRouteMetadataList"
+        },
+        {
+          "description": "An object that represents the data to match from the request."
+        }
+      ]
+    },
+    "methodName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MethodName"
+        },
+        {
+          "description": "The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>."
+        }
+      ]
+    },
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerPort"
+        },
+        {
+          "description": "The port number to match on."
+        }
+      ]
+    },
+    "serviceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ServiceName"
+        },
+        {
+          "description": "The fully qualified domain name for the service to match from the request."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the criteria for determining a request match.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-grpc-route-match-schema.json",
+  "title": "GrpcRouteMatch"
+}

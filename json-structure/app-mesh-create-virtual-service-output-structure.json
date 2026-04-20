@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualService": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualServiceData"
+        },
+        {
+          "description": "The full description of your virtual service following the create call."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualService"
+  ],
+  "description": "<zonbook></zonbook><xhtml></xhtml>",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-create-virtual-service-output-structure.json",
+  "name": "CreateVirtualServiceOutput"
+}

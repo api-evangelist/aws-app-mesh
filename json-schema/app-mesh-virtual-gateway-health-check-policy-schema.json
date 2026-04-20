@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "healthyThreshold": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayHealthCheckThreshold"
+        },
+        {
+          "description": "The number of consecutive successful health checks that must occur before declaring the listener healthy."
+        }
+      ]
+    },
+    "intervalMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayHealthCheckIntervalMillis"
+        },
+        {
+          "description": "The time period in milliseconds between each health check execution."
+        }
+      ]
+    },
+    "path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored."
+        }
+      ]
+    },
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PortNumber"
+        },
+        {
+          "description": "The destination port for the health check request. This port must match the port defined in the <a>PortMapping</a> for the listener."
+        }
+      ]
+    },
+    "protocol": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayPortProtocol"
+        },
+        {
+          "description": "The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href=\"https://github.com/grpc/grpc/blob/master/doc/health-checking.md\">GRPC Health Checking Protocol</a>."
+        }
+      ]
+    },
+    "timeoutMillis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayHealthCheckTimeoutMillis"
+        },
+        {
+          "description": "The amount of time to wait when receiving a response from the health check, in milliseconds."
+        }
+      ]
+    },
+    "unhealthyThreshold": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayHealthCheckThreshold"
+        },
+        {
+          "description": "The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy."
+        }
+      ]
+    }
+  },
+  "required": [
+    "healthyThreshold",
+    "intervalMillis",
+    "protocol",
+    "timeoutMillis",
+    "unhealthyThreshold"
+  ],
+  "description": "An object that represents the health check policy for a virtual gateway's listener.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-virtual-gateway-health-check-policy-schema.json",
+  "title": "VirtualGatewayHealthCheckPolicy"
+}

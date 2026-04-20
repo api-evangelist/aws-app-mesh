@@ -1,0 +1,7 @@
+{
+  "backendDefaults": "example-value",
+  "listeners": "example-value",
+  "logging": {
+    "accessLog": "example-value"
+  }
+}

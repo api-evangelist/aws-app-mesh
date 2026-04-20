@@ -1,0 +1,7 @@
+{
+  "type": "string",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-hostname-structure.json",
+  "name": "Hostname",
+  "description": "Hostname schema from AWS App Mesh"
+}

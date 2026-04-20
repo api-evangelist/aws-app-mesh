@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "enum": [
+    "ALLOW_ALL",
+    "DROP_ALL"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-egress-filter-type-structure.json",
+  "name": "EgressFilterType",
+  "description": "EgressFilterType schema from AWS App Mesh"
+}

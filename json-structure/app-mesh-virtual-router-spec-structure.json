@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "listeners": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualRouterListeners"
+        },
+        {
+          "description": "The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the specification of a virtual router.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-router-spec-structure.json",
+  "name": "VirtualRouterSpec"
+}

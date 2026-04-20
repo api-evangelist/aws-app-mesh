@@ -1,0 +1,4 @@
+{
+  "clientPolicy": "example-value",
+  "virtualServiceName": "my-resource-01"
+}

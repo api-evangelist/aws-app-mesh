@@ -1,0 +1,3 @@
+{
+  "certificateArn": "arn:aws:appmesh:us-east-1:123456789:mesh/my-mesh"
+}

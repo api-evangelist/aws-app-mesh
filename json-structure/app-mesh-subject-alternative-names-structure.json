@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "match": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SubjectAlternativeNameMatchers"
+        },
+        {
+          "description": "An object that represents the criteria for determining a SANs match."
+        }
+      ]
+    }
+  },
+  "required": [
+    "match"
+  ],
+  "description": "An object that represents the subject alternative names secured by the certificate.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-subject-alternative-names-structure.json",
+  "name": "SubjectAlternativeNames"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "STRICT",
+    "PERMISSIVE",
+    "DISABLED"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-virtual-gateway-listener-tls-mode-schema.json",
+  "title": "VirtualGatewayListenerTlsMode",
+  "description": "VirtualGatewayListenerTlsMode schema from AWS App Mesh"
+}

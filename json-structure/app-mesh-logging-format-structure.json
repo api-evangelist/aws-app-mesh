@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "json": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JsonFormat"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    },
+    "text": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TextFormat"
+        },
+        {
+          "description": "<p/>"
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the format for the logs.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-logging-format-structure.json",
+  "name": "LoggingFormat"
+}

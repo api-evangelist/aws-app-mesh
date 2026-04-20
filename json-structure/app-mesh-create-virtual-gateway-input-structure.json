@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "properties": {
+    "clientToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed."
+        }
+      ]
+    },
+    "spec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewaySpec"
+        },
+        {
+          "description": "The virtual gateway specification to apply."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "Optional metadata that you can apply to the virtual gateway to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters."
+        }
+      ]
+    },
+    "virtualGatewayName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name to use for the virtual gateway."
+        }
+      ]
+    }
+  },
+  "required": [
+    "spec",
+    "virtualGatewayName"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-create-virtual-gateway-input-structure.json",
+  "name": "CreateVirtualGatewayInput",
+  "description": "CreateVirtualGatewayInput schema from AWS App Mesh"
+}

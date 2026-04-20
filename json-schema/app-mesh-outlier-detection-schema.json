@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "baseEjectionDuration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Duration"
+        },
+        {
+          "description": "The base amount of time for which a host is ejected."
+        }
+      ]
+    },
+    "interval": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Duration"
+        },
+        {
+          "description": "The time interval between ejection sweep analysis."
+        }
+      ]
+    },
+    "maxEjectionPercent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutlierDetectionMaxEjectionPercent"
+        },
+        {
+          "description": "Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value."
+        }
+      ]
+    },
+    "maxServerErrors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutlierDetectionMaxServerErrors"
+        },
+        {
+          "description": "Number of consecutive <code>5xx</code> errors required for ejection. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "baseEjectionDuration",
+    "interval",
+    "maxEjectionPercent",
+    "maxServerErrors"
+  ],
+  "description": "An object that represents the outlier detection for a virtual node's listener.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-outlier-detection-schema.json",
+  "title": "OutlierDetection"
+}

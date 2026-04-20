@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "TcpRouteMatch": "aws:TcpRouteMatch",
+    "TcpTimeout": "aws:TcpTimeout",
+    "TcpRoute": "aws:TcpRoute",
+    "TcpRouteAction": "aws:TcpRouteAction",
+    "action": {
+      "@id": "aws:action",
+      "@type": "xsd:string"
+    },
+    "match": {
+      "@id": "aws:match",
+      "@type": "xsd:string"
+    },
+    "timeout": {
+      "@id": "aws:timeout",
+      "@type": "xsd:string"
+    },
+    "idle": {
+      "@id": "aws:idle",
+      "@type": "xsd:string"
+    },
+    "weightedTargets": {
+      "@id": "aws:weightedTargets",
+      "@type": "xsd:string"
+    },
+    "port": {
+      "@id": "aws:port",
+      "@type": "xsd:string"
+    }
+  }
+}

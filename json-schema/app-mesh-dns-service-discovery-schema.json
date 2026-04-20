@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "hostname": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Hostname"
+        },
+        {
+          "description": "Specifies the DNS service discovery hostname for the virtual node. "
+        }
+      ]
+    },
+    "ipPreference": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpPreference"
+        },
+        {
+          "description": "The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node."
+        }
+      ]
+    },
+    "responseType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DnsResponseType"
+        },
+        {
+          "description": "Specifies the DNS response type for the virtual node."
+        }
+      ]
+    }
+  },
+  "required": [
+    "hostname"
+  ],
+  "description": "An object that represents the DNS service discovery information for your virtual node.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-dns-service-discovery-schema.json",
+  "title": "DnsServiceDiscovery"
+}

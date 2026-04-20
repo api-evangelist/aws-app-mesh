@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters."
+        }
+      ]
+    }
+  },
+  "required": [
+    "tags"
+  ],
+  "description": "<zonbook></zonbook><xhtml></xhtml>",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-tag-resource-input-schema.json",
+  "title": "TagResourceInput"
+}

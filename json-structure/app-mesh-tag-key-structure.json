@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 128,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-tag-key-structure.json",
+  "name": "TagKey",
+  "description": "TagKey schema from AWS App Mesh"
+}

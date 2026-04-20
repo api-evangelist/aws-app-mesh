@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "invert": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>."
+        }
+      ]
+    },
+    "match": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderMatchMethod"
+        },
+        {
+          "description": "An object that represents the method and value to match with the header value sent in a request. Specify one match method."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HeaderName"
+        },
+        {
+          "description": "A name for the HTTP header in the gateway route that will be matched on."
+        }
+      ]
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "description": "An object that represents the HTTP header in the gateway route.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-gateway-route-header-structure.json",
+  "name": "HttpGatewayRouteHeader"
+}

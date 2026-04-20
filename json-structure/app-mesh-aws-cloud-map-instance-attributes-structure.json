@@ -1,0 +1,37 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "key": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AwsCloudMapInstanceAttributeKey"
+          },
+          {
+            "description": "The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned."
+          }
+        ]
+      },
+      "value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AwsCloudMapInstanceAttributeValue"
+          },
+          {
+            "description": "The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned."
+          }
+        ]
+      }
+    },
+    "required": [
+      "key",
+      "value"
+    ],
+    "description": "<p>An object that represents the Cloud Map attribute information for your virtual node.</p> <note> <p>Cloud Map is not available in the eu-south-1 Region.</p> </note>"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-aws-cloud-map-instance-attributes-structure.json",
+  "name": "AwsCloudMapInstanceAttributes",
+  "description": "AwsCloudMapInstanceAttributes schema from AWS App Mesh"
+}

@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "WeightedTarget": "aws:WeightedTarget",
+    "port": {
+      "@id": "aws:port",
+      "@type": "xsd:string"
+    },
+    "virtualNode": {
+      "@id": "aws:virtualNode",
+      "@type": "xsd:string"
+    },
+    "weight": {
+      "@id": "aws:weight",
+      "@type": "xsd:string"
+    }
+  }
+}

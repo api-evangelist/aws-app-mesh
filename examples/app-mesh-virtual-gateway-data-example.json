@@ -1,0 +1,15 @@
+{
+  "meshName": "my-resource-01",
+  "metadata": {
+    "arn": "arn:aws:appmesh:us-east-1:123456789:mesh/my-mesh",
+    "createdAt": "example-value",
+    "lastUpdatedAt": "example-value",
+    "meshOwner": "example-value",
+    "resourceOwner": "example-value",
+    "uid": "my-resource-01",
+    "version": "example-value"
+  },
+  "spec": "example-value",
+  "status": "example-value",
+  "virtualGatewayName": "my-resource-01"
+}

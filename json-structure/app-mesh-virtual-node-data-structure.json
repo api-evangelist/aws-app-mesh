@@ -1,0 +1,66 @@
+{
+  "type": "object",
+  "properties": {
+    "meshName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the service mesh that the virtual node resides in."
+        }
+      ]
+    },
+    "metadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceMetadata"
+        },
+        {
+          "description": "The associated metadata for the virtual node."
+        }
+      ]
+    },
+    "spec": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualNodeSpec"
+        },
+        {
+          "description": "The specifications of the virtual node."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualNodeStatus"
+        },
+        {
+          "description": "The current status for the virtual node."
+        }
+      ]
+    },
+    "virtualNodeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the virtual node."
+        }
+      ]
+    }
+  },
+  "required": [
+    "meshName",
+    "metadata",
+    "spec",
+    "status",
+    "virtualNodeName"
+  ],
+  "description": "An object that represents a virtual node returned by a describe operation.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-node-data-structure.json",
+  "name": "VirtualNodeData"
+}

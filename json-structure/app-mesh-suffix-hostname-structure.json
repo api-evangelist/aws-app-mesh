@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 253,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-suffix-hostname-structure.json",
+  "name": "SuffixHostname",
+  "description": "SuffixHostname schema from AWS App Mesh"
+}

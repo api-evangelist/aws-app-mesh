@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectAlternativeNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SubjectAlternativeNames"
+        },
+        {
+          "description": "A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context."
+        }
+      ]
+    },
+    "trust": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerTlsValidationContextTrust"
+        },
+        {
+          "description": "A reference to where to retrieve the trust chain when validating a peer\u2019s Transport Layer Security (TLS) certificate."
+        }
+      ]
+    }
+  },
+  "required": [
+    "trust"
+  ],
+  "description": "An object that represents a listener's Transport Layer Security (TLS) validation context.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-listener-tls-validation-context-schema.json",
+  "title": "ListenerTlsValidationContext"
+}

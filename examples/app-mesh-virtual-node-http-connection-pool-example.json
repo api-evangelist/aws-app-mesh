@@ -1,0 +1,4 @@
+{
+  "maxConnections": "example-value",
+  "maxPendingRequests": "example-value"
+}

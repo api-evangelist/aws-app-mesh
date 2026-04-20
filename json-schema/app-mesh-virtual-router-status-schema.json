@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualRouterStatusCode"
+        },
+        {
+          "description": "The current status of the virtual router."
+        }
+      ]
+    }
+  },
+  "required": [
+    "status"
+  ],
+  "description": "An object that represents the status of a virtual router. ",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-virtual-router-status-schema.json",
+  "title": "VirtualRouterStatus"
+}

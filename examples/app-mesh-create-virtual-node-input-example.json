@@ -1,0 +1,6 @@
+{
+  "clientToken": "example-value",
+  "spec": "example-value",
+  "tags": "example-value",
+  "virtualNodeName": "my-resource-01"
+}

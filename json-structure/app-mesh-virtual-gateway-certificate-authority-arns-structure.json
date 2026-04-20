@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "type": "string"
+  },
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-certificate-authority-arns-structure.json",
+  "name": "VirtualGatewayCertificateAuthorityArns",
+  "description": "VirtualGatewayCertificateAuthorityArns schema from AWS App Mesh"
+}

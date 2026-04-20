@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "egressFilter": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EgressFilter"
+        },
+        {
+          "description": "The egress filter rules for the service mesh."
+        }
+      ]
+    },
+    "serviceDiscovery": {
+      "type": "object",
+      "properties": {
+        "ipPreference": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/IpPreference"
+            },
+            {
+              "description": "The IP version to use to control traffic within the mesh."
+            }
+          ]
+        }
+      },
+      "description": "An object that represents the service discovery information for a service mesh."
+    }
+  },
+  "description": "An object that represents the specification of a service mesh.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-mesh-spec-structure.json",
+  "name": "MeshSpec"
+}

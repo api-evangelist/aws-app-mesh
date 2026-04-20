@@ -1,0 +1,6 @@
+{
+  "clientToken": "example-value",
+  "spec": "example-value",
+  "tags": "example-value",
+  "virtualRouterName": "my-resource-01"
+}

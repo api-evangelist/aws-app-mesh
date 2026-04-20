@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "gatewayRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteData"
+        },
+        {
+          "description": "The full description of your gateway route following the create call."
+        }
+      ]
+    }
+  },
+  "required": [
+    "gatewayRoute"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-create-gateway-route-output-schema.json",
+  "title": "CreateGatewayRouteOutput",
+  "description": "CreateGatewayRouteOutput schema from AWS App Mesh"
+}

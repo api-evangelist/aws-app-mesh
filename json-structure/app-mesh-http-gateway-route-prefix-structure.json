@@ -1,0 +1,9 @@
+{
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 255,
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-gateway-route-prefix-structure.json",
+  "name": "HttpGatewayRoutePrefix",
+  "description": "HttpGatewayRoutePrefix schema from AWS App Mesh"
+}

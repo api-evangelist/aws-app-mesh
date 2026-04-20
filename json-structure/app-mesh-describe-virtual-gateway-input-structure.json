@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {},
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-describe-virtual-gateway-input-structure.json",
+  "name": "DescribeVirtualGatewayInput",
+  "description": "DescribeVirtualGatewayInput schema from AWS App Mesh"
+}

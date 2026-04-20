@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "tls": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayClientPolicyTls"
+        },
+        {
+          "description": "A reference to an object that represents a Transport Layer Security (TLS) client policy."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents a client policy.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-client-policy-structure.json",
+  "name": "VirtualGatewayClientPolicy"
+}

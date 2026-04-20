@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualGateway": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayData"
+        },
+        {
+          "description": "The full description of your virtual gateway."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualGateway"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-describe-virtual-gateway-output-schema.json",
+  "title": "DescribeVirtualGatewayOutput",
+  "description": "DescribeVirtualGatewayOutput schema from AWS App Mesh"
+}

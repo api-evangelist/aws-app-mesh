@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualGateway": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayData"
+        },
+        {
+          "description": "A full description of the virtual gateway that was updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualGateway"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-update-virtual-gateway-output-structure.json",
+  "name": "UpdateVirtualGatewayOutput",
+  "description": "UpdateVirtualGatewayOutput schema from AWS App Mesh"
+}

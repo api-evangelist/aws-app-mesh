@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "subjectAlternativeNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SubjectAlternativeNames"
+        },
+        {
+          "description": "A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context."
+        }
+      ]
+    },
+    "trust": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayTlsValidationContextTrust"
+        },
+        {
+          "description": "A reference to where to retrieve the trust chain when validating a peer\u2019s Transport Layer Security (TLS) certificate."
+        }
+      ]
+    }
+  },
+  "required": [
+    "trust"
+  ],
+  "description": "An object that represents a Transport Layer Security (TLS) validation context.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-tls-validation-context-structure.json",
+  "name": "VirtualGatewayTlsValidationContext"
+}

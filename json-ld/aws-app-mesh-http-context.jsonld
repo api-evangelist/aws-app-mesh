@@ -1,0 +1,129 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "HttpGatewayRoute": "aws:HttpGatewayRoute",
+    "HttpRouteHeader": "aws:HttpRouteHeader",
+    "HttpRouteMatch": "aws:HttpRouteMatch",
+    "HttpRoute": "aws:HttpRoute",
+    "HttpGatewayRouteRewrite": "aws:HttpGatewayRouteRewrite",
+    "HttpGatewayRouteMatch": "aws:HttpGatewayRouteMatch",
+    "HttpGatewayRoutePathRewrite": "aws:HttpGatewayRoutePathRewrite",
+    "HttpPathMatch": "aws:HttpPathMatch",
+    "HttpTimeout": "aws:HttpTimeout",
+    "HttpGatewayRouteHeader": "aws:HttpGatewayRouteHeader",
+    "HttpRouteAction": "aws:HttpRouteAction",
+    "HttpRetryPolicy": "aws:HttpRetryPolicy",
+    "HttpGatewayRoutePrefixRewrite": "aws:HttpGatewayRoutePrefixRewrite",
+    "HttpGatewayRouteAction": "aws:HttpGatewayRouteAction",
+    "HttpQueryParameter": "aws:HttpQueryParameter",
+    "httpRetryEvents": {
+      "@id": "aws:httpRetryEvents",
+      "@type": "xsd:string"
+    },
+    "maxRetries": {
+      "@id": "aws:maxRetries",
+      "@type": "xsd:string"
+    },
+    "perRetryTimeout": {
+      "@id": "aws:perRetryTimeout",
+      "@type": "xsd:string"
+    },
+    "tcpRetryEvents": {
+      "@id": "aws:tcpRetryEvents",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "aws:action",
+      "@type": "xsd:string"
+    },
+    "match": {
+      "@id": "aws:match",
+      "@type": "xsd:string"
+    },
+    "exact": {
+      "@id": "aws:exact",
+      "@type": "xsd:string"
+    },
+    "headers": {
+      "@id": "aws:headers",
+      "@type": "xsd:string"
+    },
+    "hostname": {
+      "@id": "aws:hostname",
+      "@type": "xsd:string"
+    },
+    "method": {
+      "@id": "aws:method",
+      "@type": "xsd:string"
+    },
+    "path": {
+      "@id": "aws:path",
+      "@type": "xsd:string"
+    },
+    "port": {
+      "@id": "aws:port",
+      "@type": "xsd:string"
+    },
+    "prefix": {
+      "@id": "aws:prefix",
+      "@type": "xsd:string"
+    },
+    "queryParameters": {
+      "@id": "aws:queryParameters",
+      "@type": "xsd:string"
+    },
+    "defaultPrefix": {
+      "@id": "aws:defaultPrefix",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "aws:value",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "idle": {
+      "@id": "aws:idle",
+      "@type": "xsd:string"
+    },
+    "perRequest": {
+      "@id": "aws:perRequest",
+      "@type": "xsd:string"
+    },
+    "invert": {
+      "@id": "aws:invert",
+      "@type": "xsd:string"
+    },
+    "rewrite": {
+      "@id": "aws:rewrite",
+      "@type": "xsd:string"
+    },
+    "target": {
+      "@id": "aws:target",
+      "@type": "xsd:string"
+    },
+    "scheme": {
+      "@id": "aws:scheme",
+      "@type": "xsd:string"
+    },
+    "retryPolicy": {
+      "@id": "aws:retryPolicy",
+      "@type": "xsd:string"
+    },
+    "timeout": {
+      "@id": "aws:timeout",
+      "@type": "xsd:string"
+    },
+    "regex": {
+      "@id": "aws:regex",
+      "@type": "xsd:string"
+    },
+    "weightedTargets": {
+      "@id": "aws:weightedTargets",
+      "@type": "xsd:string"
+    }
+  }
+}

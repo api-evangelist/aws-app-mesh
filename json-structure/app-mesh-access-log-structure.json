@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "file": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FileAccessLog"
+        },
+        {
+          "description": "The file object to send virtual node access logs to."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the access logging information for a virtual node.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-access-log-structure.json",
+  "name": "AccessLog"
+}

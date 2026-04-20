@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "certificateAuthorityArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CertificateAuthorityArns"
+        },
+        {
+          "description": "One or more ACM Amazon Resource Name (ARN)s."
+        }
+      ]
+    }
+  },
+  "required": [
+    "certificateAuthorityArns"
+  ],
+  "description": "An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-tls-validation-context-acm-trust-schema.json",
+  "title": "TlsValidationContextAcmTrust"
+}

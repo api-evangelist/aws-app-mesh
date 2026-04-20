@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualGateway": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayData"
+        },
+        {
+          "description": "The virtual gateway that was deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualGateway"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-delete-virtual-gateway-output-structure.json",
+  "name": "DeleteVirtualGatewayOutput",
+  "description": "DeleteVirtualGatewayOutput schema from AWS App Mesh"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "enum": [
+    "STRICT",
+    "PERMISSIVE",
+    "DISABLED"
+  ],
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-listener-tls-mode-structure.json",
+  "name": "ListenerTlsMode",
+  "description": "ListenerTlsMode schema from AWS App Mesh"
+}

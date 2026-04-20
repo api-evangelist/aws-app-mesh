@@ -1,0 +1,7 @@
+{
+  "type": "int32",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-long-structure.json",
+  "name": "Long",
+  "description": "Long schema from AWS App Mesh"
+}

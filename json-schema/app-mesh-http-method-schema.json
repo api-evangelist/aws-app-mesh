@@ -1,0 +1,18 @@
+{
+  "type": "string",
+  "enum": [
+    "GET",
+    "HEAD",
+    "POST",
+    "PUT",
+    "DELETE",
+    "CONNECT",
+    "OPTIONS",
+    "TRACE",
+    "PATCH"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-http-method-schema.json",
+  "title": "HttpMethod",
+  "description": "HttpMethod schema from AWS App Mesh"
+}

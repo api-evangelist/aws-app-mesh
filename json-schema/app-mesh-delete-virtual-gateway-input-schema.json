@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {},
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-delete-virtual-gateway-input-schema.json",
+  "title": "DeleteVirtualGatewayInput",
+  "description": "DeleteVirtualGatewayInput schema from AWS App Mesh"
+}

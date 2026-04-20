@@ -1,0 +1,10 @@
+{
+  "arn": "arn:aws:appmesh:us-east-1:123456789:mesh/my-mesh",
+  "createdAt": "example-value",
+  "lastUpdatedAt": "example-value",
+  "meshName": "my-resource-01",
+  "meshOwner": "example-value",
+  "resourceOwner": "example-value",
+  "version": "example-value",
+  "virtualRouterName": "my-resource-01"
+}

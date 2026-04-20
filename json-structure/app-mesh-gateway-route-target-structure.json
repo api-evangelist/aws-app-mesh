@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerPort"
+        },
+        {
+          "description": "The port number of the gateway route target."
+        }
+      ]
+    },
+    "virtualService": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteVirtualService"
+        },
+        {
+          "description": "An object that represents a virtual service gateway route target."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualService"
+  ],
+  "description": "An object that represents a gateway route target.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-gateway-route-target-structure.json",
+  "name": "GatewayRouteTarget"
+}

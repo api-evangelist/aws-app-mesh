@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "accessLog": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayAccessLog"
+        },
+        {
+          "description": "The access log configuration."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents logging information.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-logging-structure.json",
+  "name": "VirtualGatewayLogging"
+}

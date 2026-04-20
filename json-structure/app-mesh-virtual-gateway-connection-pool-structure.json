@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "grpc": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayGrpcConnectionPool"
+        },
+        {
+          "description": "An object that represents a type of connection pool. "
+        }
+      ]
+    },
+    "http": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayHttpConnectionPool"
+        },
+        {
+          "description": "An object that represents a type of connection pool."
+        }
+      ]
+    },
+    "http2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualGatewayHttp2ConnectionPool"
+        },
+        {
+          "description": "An object that represents a type of connection pool."
+        }
+      ]
+    }
+  },
+  "description": "<p>An object that represents the type of virtual gateway connection pool.</p> <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p> <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p>",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-gateway-connection-pool-structure.json",
+  "name": "VirtualGatewayConnectionPool"
+}

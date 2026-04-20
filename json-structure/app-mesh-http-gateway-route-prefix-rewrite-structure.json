@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "defaultPrefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DefaultGatewayRouteRewrite"
+        },
+        {
+          "description": "The default prefix used to replace the incoming route prefix when rewritten."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpGatewayRoutePrefix"
+        },
+        {
+          "description": "The value used to replace the incoming route prefix when rewritten."
+        }
+      ]
+    }
+  },
+  "description": "An object representing the beginning characters of the route to rewrite.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-gateway-route-prefix-rewrite-structure.json",
+  "name": "HttpGatewayRoutePrefixRewrite"
+}

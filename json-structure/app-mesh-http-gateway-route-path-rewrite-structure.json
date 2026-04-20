@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "exact": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpPathExact"
+        },
+        {
+          "description": "The exact path to rewrite."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents the path to rewrite.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-gateway-route-path-rewrite-structure.json",
+  "name": "HttpGatewayRoutePathRewrite"
+}

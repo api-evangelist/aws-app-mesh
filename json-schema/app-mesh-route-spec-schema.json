@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "properties": {
+    "grpcRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GrpcRoute"
+        },
+        {
+          "description": "An object that represents the specification of a gRPC route."
+        }
+      ]
+    },
+    "http2Route": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpRoute"
+        },
+        {
+          "description": "An object that represents the specification of an HTTP/2 route."
+        }
+      ]
+    },
+    "httpRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpRoute"
+        },
+        {
+          "description": "An object that represents the specification of an HTTP route."
+        }
+      ]
+    },
+    "priority": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RoutePriority"
+        },
+        {
+          "description": "The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority."
+        }
+      ]
+    },
+    "tcpRoute": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TcpRoute"
+        },
+        {
+          "description": "An object that represents the specification of a TCP route."
+        }
+      ]
+    }
+  },
+  "description": "An object that represents a route specification. Specify one route type.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-route-spec-schema.json",
+  "title": "RouteSpec"
+}

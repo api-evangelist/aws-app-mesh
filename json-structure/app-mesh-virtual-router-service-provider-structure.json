@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualRouterName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The name of the virtual router that is acting as a service provider."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualRouterName"
+  ],
+  "description": "An object that represents a virtual node service provider.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-virtual-router-service-provider-structure.json",
+  "name": "VirtualRouterServiceProvider"
+}

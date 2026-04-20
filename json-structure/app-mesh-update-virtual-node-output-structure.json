@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualNode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualNodeData"
+        },
+        {
+          "description": "A full description of the virtual node that was updated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualNode"
+  ],
+  "description": "<zonbook></zonbook><xhtml></xhtml>",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-update-virtual-node-output-structure.json",
+  "name": "UpdateVirtualNodeOutput"
+}

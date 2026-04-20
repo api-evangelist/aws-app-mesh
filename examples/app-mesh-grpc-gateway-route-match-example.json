@@ -1,0 +1,6 @@
+{
+  "hostname": "my-resource-01",
+  "metadata": "example-value",
+  "port": "example-value",
+  "serviceName": "my-resource-01"
+}

@@ -1,0 +1,8 @@
+{
+  "meshName": "my-resource-01",
+  "metadata": "example-value",
+  "routeName": "my-resource-01",
+  "spec": "example-value",
+  "status": "example-value",
+  "virtualRouterName": "my-resource-01"
+}

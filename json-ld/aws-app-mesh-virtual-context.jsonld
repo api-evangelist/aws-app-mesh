@@ -1,0 +1,290 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "VirtualGatewayHttpConnectionPool": "aws:VirtualGatewayHttpConnectionPool",
+    "VirtualGatewayBackendDefaults": "aws:VirtualGatewayBackendDefaults",
+    "VirtualNodeStatus": "aws:VirtualNodeStatus",
+    "VirtualNodeConnectionPool": "aws:VirtualNodeConnectionPool",
+    "VirtualGatewayListenerTlsFileCertificate": "aws:VirtualGatewayListenerTlsFileCertificate",
+    "VirtualGatewayTlsValidationContextTrust": "aws:VirtualGatewayTlsValidationContextTrust",
+    "VirtualGatewayListener": "aws:VirtualGatewayListener",
+    "VirtualGatewayListenerTlsValidationContext": "aws:VirtualGatewayListenerTlsValidationContext",
+    "VirtualGatewayClientPolicy": "aws:VirtualGatewayClientPolicy",
+    "VirtualGatewayClientTlsCertificate": "aws:VirtualGatewayClientTlsCertificate",
+    "VirtualGatewayRef": "aws:VirtualGatewayRef",
+    "VirtualGatewayGrpcConnectionPool": "aws:VirtualGatewayGrpcConnectionPool",
+    "VirtualRouterListener": "aws:VirtualRouterListener",
+    "VirtualGatewayTlsValidationContext": "aws:VirtualGatewayTlsValidationContext",
+    "VirtualGatewayPortMapping": "aws:VirtualGatewayPortMapping",
+    "VirtualServiceBackend": "aws:VirtualServiceBackend",
+    "VirtualRouterData": "aws:VirtualRouterData",
+    "VirtualServiceProvider": "aws:VirtualServiceProvider",
+    "VirtualGatewayFileAccessLog": "aws:VirtualGatewayFileAccessLog",
+    "VirtualGatewayConnectionPool": "aws:VirtualGatewayConnectionPool",
+    "VirtualGatewaySpec": "aws:VirtualGatewaySpec",
+    "VirtualGatewayHealthCheckPolicy": "aws:VirtualGatewayHealthCheckPolicy",
+    "VirtualRouterRef": "aws:VirtualRouterRef",
+    "VirtualGatewayListenerTlsValidationContextTrust": "aws:VirtualGatewayListenerTlsValidationContextTrust",
+    "VirtualNodeRef": "aws:VirtualNodeRef",
+    "VirtualRouterSpec": "aws:VirtualRouterSpec",
+    "VirtualRouterServiceProvider": "aws:VirtualRouterServiceProvider",
+    "VirtualGatewayTlsValidationContextFileTrust": "aws:VirtualGatewayTlsValidationContextFileTrust",
+    "VirtualGatewayTlsValidationContextAcmTrust": "aws:VirtualGatewayTlsValidationContextAcmTrust",
+    "VirtualRouterStatus": "aws:VirtualRouterStatus",
+    "VirtualServiceSpec": "aws:VirtualServiceSpec",
+    "VirtualServiceData": "aws:VirtualServiceData",
+    "VirtualServiceRef": "aws:VirtualServiceRef",
+    "VirtualGatewayStatus": "aws:VirtualGatewayStatus",
+    "VirtualGatewayLogging": "aws:VirtualGatewayLogging",
+    "VirtualGatewayListenerTls": "aws:VirtualGatewayListenerTls",
+    "VirtualNodeHttpConnectionPool": "aws:VirtualNodeHttpConnectionPool",
+    "VirtualGatewayListenerTlsSdsCertificate": "aws:VirtualGatewayListenerTlsSdsCertificate",
+    "VirtualNodeData": "aws:VirtualNodeData",
+    "VirtualGatewayData": "aws:VirtualGatewayData",
+    "VirtualGatewayTlsValidationContextSdsTrust": "aws:VirtualGatewayTlsValidationContextSdsTrust",
+    "VirtualGatewayListenerTlsAcmCertificate": "aws:VirtualGatewayListenerTlsAcmCertificate",
+    "VirtualServiceStatus": "aws:VirtualServiceStatus",
+    "VirtualNodeServiceProvider": "aws:VirtualNodeServiceProvider",
+    "VirtualGatewayHttp2ConnectionPool": "aws:VirtualGatewayHttp2ConnectionPool",
+    "VirtualGatewayClientPolicyTls": "aws:VirtualGatewayClientPolicyTls",
+    "VirtualNodeGrpcConnectionPool": "aws:VirtualNodeGrpcConnectionPool",
+    "VirtualNodeSpec": "aws:VirtualNodeSpec",
+    "VirtualNodeHttp2ConnectionPool": "aws:VirtualNodeHttp2ConnectionPool",
+    "VirtualGatewayListenerTlsCertificate": "aws:VirtualGatewayListenerTlsCertificate",
+    "VirtualNodeTcpConnectionPool": "aws:VirtualNodeTcpConnectionPool",
+    "VirtualGatewayAccessLog": "aws:VirtualGatewayAccessLog",
+    "meshName": {
+      "@id": "aws:meshName",
+      "@type": "xsd:string"
+    },
+    "metadata": {
+      "@id": "aws:metadata",
+      "@type": "xsd:string"
+    },
+    "spec": {
+      "@id": "aws:spec",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "aws:status",
+      "@type": "xsd:string"
+    },
+    "virtualRouterName": {
+      "@id": "aws:virtualRouterName",
+      "@type": "xsd:string"
+    },
+    "clientPolicy": {
+      "@id": "aws:clientPolicy",
+      "@type": "xsd:string"
+    },
+    "certificateAuthorityArns": {
+      "@id": "aws:certificateAuthorityArns",
+      "@type": "xsd:string"
+    },
+    "certificate": {
+      "@id": "aws:certificate",
+      "@type": "xsd:string"
+    },
+    "mode": {
+      "@id": "aws:mode",
+      "@type": "xsd:string"
+    },
+    "validation": {
+      "@id": "aws:validation",
+      "@type": "xsd:string"
+    },
+    "subjectAlternativeNames": {
+      "@id": "aws:subjectAlternativeNames",
+      "@type": "xsd:string"
+    },
+    "trust": {
+      "@id": "aws:trust",
+      "@type": "xsd:string"
+    },
+    "secretName": {
+      "@id": "aws:secretName",
+      "@type": "xsd:string"
+    },
+    "portMapping": {
+      "@id": "aws:portMapping",
+      "@type": "@id"
+    },
+    "maxRequests": {
+      "@id": "aws:maxRequests",
+      "@type": "xsd:string"
+    },
+    "certificateChain": {
+      "@id": "aws:certificateChain",
+      "@type": "xsd:string"
+    },
+    "provider": {
+      "@id": "aws:provider",
+      "@type": "xsd:string"
+    },
+    "grpc": {
+      "@id": "aws:grpc",
+      "@type": "xsd:string"
+    },
+    "http": {
+      "@id": "aws:http",
+      "@type": "xsd:string"
+    },
+    "http2": {
+      "@id": "aws:http2",
+      "@type": "xsd:string"
+    },
+    "backendDefaults": {
+      "@id": "aws:backendDefaults",
+      "@type": "xsd:string"
+    },
+    "backends": {
+      "@id": "aws:backends",
+      "@type": "xsd:string"
+    },
+    "listeners": {
+      "@id": "aws:listeners",
+      "@type": "xsd:string"
+    },
+    "logging": {
+      "@id": "aws:logging",
+      "@type": "xsd:string"
+    },
+    "serviceDiscovery": {
+      "@id": "aws:serviceDiscovery",
+      "@type": "xsd:string"
+    },
+    "arn": {
+      "@id": "aws:arn",
+      "@type": "xsd:string"
+    },
+    "createdAt": {
+      "@id": "aws:createdAt",
+      "@type": "xsd:string"
+    },
+    "lastUpdatedAt": {
+      "@id": "aws:lastUpdatedAt",
+      "@type": "xsd:string"
+    },
+    "meshOwner": {
+      "@id": "aws:meshOwner",
+      "@type": "xsd:string"
+    },
+    "resourceOwner": {
+      "@id": "aws:resourceOwner",
+      "@type": "xsd:string"
+    },
+    "version": "schema:version",
+    "virtualServiceName": {
+      "@id": "aws:virtualServiceName",
+      "@type": "xsd:string"
+    },
+    "port": {
+      "@id": "aws:port",
+      "@type": "xsd:string"
+    },
+    "protocol": {
+      "@id": "aws:protocol",
+      "@type": "xsd:string"
+    },
+    "enforce": {
+      "@id": "aws:enforce",
+      "@type": "xsd:string"
+    },
+    "ports": {
+      "@id": "aws:ports",
+      "@type": "xsd:string"
+    },
+    "certificateArn": {
+      "@id": "aws:certificateArn",
+      "@type": "xsd:string"
+    },
+    "virtualGatewayName": {
+      "@id": "aws:virtualGatewayName",
+      "@type": "xsd:string"
+    },
+    "virtualNodeName": {
+      "@id": "aws:virtualNodeName",
+      "@type": "xsd:string"
+    },
+    "file": {
+      "@id": "aws:file",
+      "@type": "xsd:string"
+    },
+    "virtualNode": {
+      "@id": "aws:virtualNode",
+      "@type": "xsd:string"
+    },
+    "virtualRouter": {
+      "@id": "aws:virtualRouter",
+      "@type": "xsd:string"
+    },
+    "maxConnections": {
+      "@id": "aws:maxConnections",
+      "@type": "xsd:string"
+    },
+    "maxPendingRequests": {
+      "@id": "aws:maxPendingRequests",
+      "@type": "xsd:string"
+    },
+    "format": {
+      "@id": "aws:format",
+      "@type": "xsd:string"
+    },
+    "path": {
+      "@id": "aws:path",
+      "@type": "xsd:string"
+    },
+    "sds": {
+      "@id": "aws:sds",
+      "@type": "xsd:string"
+    },
+    "accessLog": {
+      "@id": "aws:accessLog",
+      "@type": "xsd:string"
+    },
+    "tls": {
+      "@id": "aws:tls",
+      "@type": "xsd:string"
+    },
+    "connectionPool": {
+      "@id": "aws:connectionPool",
+      "@type": "xsd:string"
+    },
+    "healthCheck": {
+      "@id": "aws:healthCheck",
+      "@type": "xsd:string"
+    },
+    "acm": {
+      "@id": "aws:acm",
+      "@type": "xsd:string"
+    },
+    "healthyThreshold": {
+      "@id": "aws:healthyThreshold",
+      "@type": "xsd:string"
+    },
+    "intervalMillis": {
+      "@id": "aws:intervalMillis",
+      "@type": "xsd:string"
+    },
+    "timeoutMillis": {
+      "@id": "aws:timeoutMillis",
+      "@type": "xsd:string"
+    },
+    "unhealthyThreshold": {
+      "@id": "aws:unhealthyThreshold",
+      "@type": "xsd:string"
+    },
+    "tcp": {
+      "@id": "aws:tcp",
+      "@type": "xsd:string"
+    },
+    "privateKey": {
+      "@id": "aws:privateKey",
+      "@type": "xsd:string"
+    }
+  }
+}

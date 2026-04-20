@@ -1,0 +1,46 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "invert": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Boolean"
+          },
+          {
+            "description": "Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>."
+          }
+        ]
+      },
+      "match": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GrpcRouteMetadataMatchMethod"
+          },
+          {
+            "description": "An object that represents the data to match from the request."
+          }
+        ]
+      },
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/HeaderName"
+          },
+          {
+            "description": "The name of the route."
+          }
+        ]
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "description": "An object that represents the match metadata for the route."
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-grpc-route-metadata-list-schema.json",
+  "title": "GrpcRouteMetadataList",
+  "description": "GrpcRouteMetadataList schema from AWS App Mesh"
+}

@@ -1,0 +1,61 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ListVirtualNodesOutput": "aws:ListVirtualNodesOutput",
+    "ListVirtualRoutersInput": "aws:ListVirtualRoutersInput",
+    "ListRoutesInput": "aws:ListRoutesInput",
+    "ListVirtualGatewaysInput": "aws:ListVirtualGatewaysInput",
+    "ListGatewayRoutesOutput": "aws:ListGatewayRoutesOutput",
+    "ListVirtualGatewaysOutput": "aws:ListVirtualGatewaysOutput",
+    "ListMeshesInput": "aws:ListMeshesInput",
+    "ListTagsForResourceOutput": "aws:ListTagsForResourceOutput",
+    "ListVirtualRoutersOutput": "aws:ListVirtualRoutersOutput",
+    "ListRoutesOutput": "aws:ListRoutesOutput",
+    "ListVirtualNodesInput": "aws:ListVirtualNodesInput",
+    "ListMeshesOutput": "aws:ListMeshesOutput",
+    "ListTagsForResourceInput": "aws:ListTagsForResourceInput",
+    "ListVirtualServicesOutput": "aws:ListVirtualServicesOutput",
+    "ListGatewayRoutesInput": "aws:ListGatewayRoutesInput",
+    "ListVirtualServicesInput": "aws:ListVirtualServicesInput",
+    "nextToken": {
+      "@id": "aws:nextToken",
+      "@type": "xsd:string"
+    },
+    "virtualNodes": {
+      "@id": "aws:virtualNodes",
+      "@type": "xsd:string"
+    },
+    "routes": {
+      "@id": "aws:routes",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "aws:tags",
+      "@type": "xsd:string"
+    },
+    "virtualServices": {
+      "@id": "aws:virtualServices",
+      "@type": "xsd:string"
+    },
+    "virtualRouters": {
+      "@id": "aws:virtualRouters",
+      "@type": "xsd:string"
+    },
+    "gatewayRoutes": {
+      "@id": "aws:gatewayRoutes",
+      "@type": "xsd:string"
+    },
+    "meshes": {
+      "@id": "aws:meshes",
+      "@type": "xsd:string"
+    },
+    "virtualGateways": {
+      "@id": "aws:virtualGateways",
+      "@type": "xsd:string"
+    }
+  }
+}

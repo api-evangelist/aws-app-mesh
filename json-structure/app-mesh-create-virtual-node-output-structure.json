@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "virtualNode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VirtualNodeData"
+        },
+        {
+          "description": "The full description of your virtual node following the create call."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualNode"
+  ],
+  "description": "<zonbook></zonbook><xhtml></xhtml>",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-create-virtual-node-output-structure.json",
+  "name": "CreateVirtualNodeOutput"
+}

@@ -1,0 +1,5 @@
+{
+  "hostname": "my-resource-01",
+  "ipPreference": "example-value",
+  "responseType": "example-value"
+}

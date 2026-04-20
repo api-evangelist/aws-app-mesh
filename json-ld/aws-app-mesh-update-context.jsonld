@@ -1,0 +1,59 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "aws": "https://aws.amazon.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "UpdateVirtualNodeOutput": "aws:UpdateVirtualNodeOutput",
+    "UpdateGatewayRouteInput": "aws:UpdateGatewayRouteInput",
+    "UpdateVirtualGatewayInput": "aws:UpdateVirtualGatewayInput",
+    "UpdateRouteOutput": "aws:UpdateRouteOutput",
+    "UpdateVirtualNodeInput": "aws:UpdateVirtualNodeInput",
+    "UpdateVirtualRouterInput": "aws:UpdateVirtualRouterInput",
+    "UpdateMeshOutput": "aws:UpdateMeshOutput",
+    "UpdateVirtualRouterOutput": "aws:UpdateVirtualRouterOutput",
+    "UpdateGatewayRouteOutput": "aws:UpdateGatewayRouteOutput",
+    "UpdateRouteInput": "aws:UpdateRouteInput",
+    "UpdateVirtualGatewayOutput": "aws:UpdateVirtualGatewayOutput",
+    "UpdateVirtualServiceOutput": "aws:UpdateVirtualServiceOutput",
+    "UpdateMeshInput": "aws:UpdateMeshInput",
+    "UpdateVirtualServiceInput": "aws:UpdateVirtualServiceInput",
+    "clientToken": {
+      "@id": "aws:clientToken",
+      "@type": "xsd:string"
+    },
+    "spec": {
+      "@id": "aws:spec",
+      "@type": "xsd:string"
+    },
+    "mesh": {
+      "@id": "aws:mesh",
+      "@type": "@id"
+    },
+    "virtualNode": {
+      "@id": "aws:virtualNode",
+      "@type": "xsd:string"
+    },
+    "route": {
+      "@id": "aws:route",
+      "@type": "xsd:string"
+    },
+    "virtualService": {
+      "@id": "aws:virtualService",
+      "@type": "xsd:string"
+    },
+    "virtualRouter": {
+      "@id": "aws:virtualRouter",
+      "@type": "xsd:string"
+    },
+    "virtualGateway": {
+      "@id": "aws:virtualGateway",
+      "@type": "xsd:string"
+    },
+    "gatewayRoute": {
+      "@id": "aws:gatewayRoute",
+      "@type": "xsd:string"
+    }
+  }
+}

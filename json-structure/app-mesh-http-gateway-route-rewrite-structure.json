@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "properties": {
+    "hostname": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GatewayRouteHostnameRewrite"
+        },
+        {
+          "description": "The host name to rewrite."
+        }
+      ]
+    },
+    "path": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpGatewayRoutePathRewrite"
+        },
+        {
+          "description": "The path to rewrite."
+        }
+      ]
+    },
+    "prefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpGatewayRoutePrefixRewrite"
+        },
+        {
+          "description": "The specified beginning characters to rewrite."
+        }
+      ]
+    }
+  },
+  "description": "An object representing the gateway route to rewrite.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-http-gateway-route-rewrite-structure.json",
+  "name": "HttpGatewayRouteRewrite"
+}

@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "grpc": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GrpcTimeout"
+        },
+        {
+          "description": "An object that represents types of timeouts. "
+        }
+      ]
+    },
+    "http": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpTimeout"
+        },
+        {
+          "description": "An object that represents types of timeouts. "
+        }
+      ]
+    },
+    "http2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/HttpTimeout"
+        },
+        {
+          "description": "An object that represents types of timeouts. "
+        }
+      ]
+    },
+    "tcp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TcpTimeout"
+        },
+        {
+          "description": "An object that represents types of timeouts. "
+        }
+      ]
+    }
+  },
+  "description": "An object that represents timeouts for different protocols.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-listener-timeout-structure.json",
+  "name": "ListenerTimeout"
+}

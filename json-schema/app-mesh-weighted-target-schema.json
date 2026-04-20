@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "properties": {
+    "port": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerPort"
+        },
+        {
+          "description": "The targeted port of the weighted object."
+        }
+      ]
+    },
+    "virtualNode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceName"
+        },
+        {
+          "description": "The virtual node to associate with the weighted target."
+        }
+      ]
+    },
+    "weight": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PercentInt"
+        },
+        {
+          "description": "The relative weight of the weighted target."
+        }
+      ]
+    }
+  },
+  "required": [
+    "virtualNode",
+    "weight"
+  ],
+  "description": "An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-schema/app-mesh-weighted-target-schema.json",
+  "title": "WeightedTarget"
+}

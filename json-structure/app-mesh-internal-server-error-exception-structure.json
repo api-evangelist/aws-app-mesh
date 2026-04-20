@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-internal-server-error-exception-structure.json",
+  "name": "InternalServerErrorException",
+  "description": "InternalServerErrorException schema from AWS App Mesh"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "end": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The end of the range."
+        }
+      ]
+    },
+    "start": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The start of the range."
+        }
+      ]
+    }
+  },
+  "required": [
+    "end",
+    "start"
+  ],
+  "description": "An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/json-structure/app-mesh-match-range-structure.json",
+  "name": "MatchRange"
+}
