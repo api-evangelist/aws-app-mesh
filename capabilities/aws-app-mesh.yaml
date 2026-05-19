@@ -1,0 +1,2113 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: AWS App Mesh
+  description: 'AWS App Mesh. 38 operations. Lead operation: AWS App Mesh Create Mesh. Self-contained Naftiko capability covering
+    one Aws App Mesh business surface.'
+  tags:
+  - Aws App Mesh
+  - AWS App Mesh
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AWS_APP_MESH_API_KEY: AWS_APP_MESH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: aws-app-mesh
+    baseUri: http://appmesh.{region}.amazonaws.com
+    description: AWS App Mesh business capability. Self-contained, no shared references.
+    resources:
+    - name: v20190125-meshes
+      path: /v20190125/meshes
+      operations:
+      - name: createmesh
+        method: PUT
+        description: AWS App Mesh Create Mesh
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listmeshes
+        method: GET
+        description: AWS App Mesh List Meshes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use
+            this parameter, <code>ListMeshes</code> returns only <code>l
+        - name: nextToken
+          in: query
+          type: string
+          description: <p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request
+            where <code>limit</code> was used and the results exceede
+    - name: v20190125-meshes-meshName
+      path: /v20190125/meshes/{meshName}
+      operations:
+      - name: deletemesh
+        method: DELETE
+        description: AWS App Mesh Delete Mesh
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to delete.
+          required: true
+      - name: describemesh
+        method: GET
+        description: AWS App Mesh Describe Mesh
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to describe.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+      - name: updatemesh
+        method: PUT
+        description: AWS App Mesh Update Mesh
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-meshes-meshName-virtualGateway-virtualGatewayName-gatewayRoutes
+      path: /v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes
+      operations:
+      - name: creategatewayroute
+        method: PUT
+        description: AWS App Mesh Create Gateway Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to create the gateway route in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: 'The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then the account that you specify must share the mesh with '
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a
+            shared mesh, then you must be the owner of the virtual gatew
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listgatewayroutes
+        method: GET
+        description: AWS App Mesh List Gateway Routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When
+            you use this parameter, <code>ListGatewayRoutes</code> return
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to list gateway routes in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: nextToken
+          in: query
+          type: string
+          description: The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code>
+            request where <code>limit</code> was used and the results exc
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway to list gateway routes in.
+          required: true
+    - name: v20190125-meshes-meshName-virtualGateway-virtualGatewayName-gatewayRoutes-gatewa
+      path: /v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}
+      operations:
+      - name: deletegatewayroute
+        method: DELETE
+        description: AWS App Mesh Delete Gateway Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayRouteName
+          in: path
+          type: string
+          description: The name of the gateway route to delete.
+          required: true
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to delete the gateway route from.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway to delete the route from.
+          required: true
+      - name: describegatewayroute
+        method: GET
+        description: AWS App Mesh Describe Gateway Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayRouteName
+          in: path
+          type: string
+          description: The name of the gateway route to describe.
+          required: true
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the gateway route resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway that the gateway route is associated with.
+          required: true
+      - name: updategatewayroute
+        method: PUT
+        description: AWS App Mesh Update Gateway Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: gatewayRouteName
+          in: path
+          type: string
+          description: The name of the gateway route to update.
+          required: true
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the gateway route resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway that the gateway route is associated with.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-meshes-meshName-virtualGateways
+      path: /v20190125/meshes/{meshName}/virtualGateways
+      operations:
+      - name: createvirtualgateway
+        method: PUT
+        description: AWS App Mesh Create Virtual Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to create the virtual gateway in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: 'The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then the account that you specify must share the mesh with '
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listvirtualgateways
+        method: GET
+        description: AWS App Mesh List Virtual Gateways
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When
+            you use this parameter, <code>ListVirtualGateways</code> re
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to list virtual gateways in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: nextToken
+          in: query
+          type: string
+          description: The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code>
+            request where <code>limit</code> was used and the results e
+    - name: v20190125-meshes-meshName-virtualGateways-virtualGatewayName
+      path: /v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}
+      operations:
+      - name: deletevirtualgateway
+        method: DELETE
+        description: AWS App Mesh Delete Virtual Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to delete the virtual gateway from.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway to delete.
+          required: true
+      - name: describevirtualgateway
+        method: GET
+        description: AWS App Mesh Describe Virtual Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the gateway route resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway to describe.
+          required: true
+      - name: updatevirtualgateway
+        method: PUT
+        description: AWS App Mesh Update Virtual Gateway
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the virtual gateway resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualGatewayName
+          in: path
+          type: string
+          description: The name of the virtual gateway to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-meshes-meshName-virtualNodes
+      path: /v20190125/meshes/{meshName}/virtualNodes
+      operations:
+      - name: createvirtualnode
+        method: PUT
+        description: AWS App Mesh Create Virtual Node
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to create the virtual node in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: 'The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then the account that you specify must share the mesh with '
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listvirtualnodes
+        method: GET
+        description: AWS App Mesh List Virtual Nodes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: 'The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When
+            you use this parameter, <code>ListVirtualNodes</code> returns '
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to list virtual nodes in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: nextToken
+          in: query
+          type: string
+          description: The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request
+            where <code>limit</code> was used and the results exce
+    - name: v20190125-meshes-meshName-virtualNodes-virtualNodeName
+      path: /v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}
+      operations:
+      - name: deletevirtualnode
+        method: DELETE
+        description: AWS App Mesh Delete Virtual Node
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to delete the virtual node in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualNodeName
+          in: path
+          type: string
+          description: The name of the virtual node to delete.
+          required: true
+      - name: describevirtualnode
+        method: GET
+        description: AWS App Mesh Describe Virtual Node
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the virtual node resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualNodeName
+          in: path
+          type: string
+          description: The name of the virtual node to describe.
+          required: true
+      - name: updatevirtualnode
+        method: PUT
+        description: AWS App Mesh Update Virtual Node
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the virtual node resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualNodeName
+          in: path
+          type: string
+          description: The name of the virtual node to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-meshes-meshName-virtualRouter-virtualRouterName-routes
+      path: /v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes
+      operations:
+      - name: createroute
+        method: PUT
+        description: AWS App Mesh Create Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to create the route in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: 'The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then the account that you specify must share the mesh with '
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router in which to create the route. If the virtual router is in a shared mesh,
+            then you must be the owner of the virtual router resourc
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listroutes
+        method: GET
+        description: AWS App Mesh List Routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use
+            this parameter, <code>ListRoutes</code> returns only <code>l
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to list routes in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: nextToken
+          in: query
+          type: string
+          description: The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request
+            where <code>limit</code> was used and the results exceeded t
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router to list routes in.
+          required: true
+    - name: v20190125-meshes-meshName-virtualRouter-virtualRouterName-routes-routeName
+      path: /v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
+      operations:
+      - name: deleteroute
+        method: DELETE
+        description: AWS App Mesh Delete Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to delete the route in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: routeName
+          in: path
+          type: string
+          description: The name of the route to delete.
+          required: true
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router to delete the route in.
+          required: true
+      - name: describeroute
+        method: GET
+        description: AWS App Mesh Describe Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the route resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: routeName
+          in: path
+          type: string
+          description: The name of the route to describe.
+          required: true
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router that the route is associated with.
+          required: true
+      - name: updateroute
+        method: PUT
+        description: AWS App Mesh Update Route
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the route resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: routeName
+          in: path
+          type: string
+          description: The name of the route to update.
+          required: true
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router that the route is associated with.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-meshes-meshName-virtualRouters
+      path: /v20190125/meshes/{meshName}/virtualRouters
+      operations:
+      - name: createvirtualrouter
+        method: PUT
+        description: AWS App Mesh Create Virtual Router
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to create the virtual router in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: 'The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then the account that you specify must share the mesh with '
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listvirtualrouters
+        method: GET
+        description: AWS App Mesh List Virtual Routers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When
+            you use this parameter, <code>ListVirtualRouters</code> retu
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to list virtual routers in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: nextToken
+          in: query
+          type: string
+          description: The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code>
+            request where <code>limit</code> was used and the results ex
+    - name: v20190125-meshes-meshName-virtualRouters-virtualRouterName
+      path: /v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}
+      operations:
+      - name: deletevirtualrouter
+        method: DELETE
+        description: AWS App Mesh Delete Virtual Router
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to delete the virtual router in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router to delete.
+          required: true
+      - name: describevirtualrouter
+        method: GET
+        description: AWS App Mesh Describe Virtual Router
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the virtual router resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router to describe.
+          required: true
+      - name: updatevirtualrouter
+        method: PUT
+        description: AWS App Mesh Update Virtual Router
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the virtual router resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualRouterName
+          in: path
+          type: string
+          description: The name of the virtual router to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-meshes-meshName-virtualServices
+      path: /v20190125/meshes/{meshName}/virtualServices
+      operations:
+      - name: createvirtualservice
+        method: PUT
+        description: AWS App Mesh Create Virtual Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to create the virtual service in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: 'The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then the account that you specify must share the mesh with '
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: listvirtualservices
+        method: GET
+        description: AWS App Mesh List Virtual Services
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When
+            you use this parameter, <code>ListVirtualServices</code> re
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to list virtual services in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: nextToken
+          in: query
+          type: string
+          description: The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code>
+            request where <code>limit</code> was used and the results e
+    - name: v20190125-meshes-meshName-virtualServices-virtualServiceName
+      path: /v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}
+      operations:
+      - name: deletevirtualservice
+        method: DELETE
+        description: AWS App Mesh Delete Virtual Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh to delete the virtual service in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualServiceName
+          in: path
+          type: string
+          description: The name of the virtual service to delete.
+          required: true
+      - name: describevirtualservice
+        method: GET
+        description: AWS App Mesh Describe Virtual Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the virtual service resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualServiceName
+          in: path
+          type: string
+          description: The name of the virtual service to describe.
+          required: true
+      - name: updatevirtualservice
+        method: PUT
+        description: AWS App Mesh Update Virtual Service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: meshName
+          in: path
+          type: string
+          description: The name of the service mesh that the virtual service resides in.
+          required: true
+        - name: meshOwner
+          in: query
+          type: string
+          description: The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own,
+            then it's the ID of the account that shared the mesh with y
+        - name: virtualServiceName
+          in: path
+          type: string
+          description: The name of the virtual service to update.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-tag#resourceArn
+      path: /v20190125/tag#resourceArn
+      operations:
+      - name: tagresource
+        method: PUT
+        description: AWS App Mesh Tag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the resource to add tags to.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: v20190125-tags#resourceArn
+      path: /v20190125/tags#resourceArn
+      operations:
+      - name: listtagsforresource
+        method: GET
+        description: AWS App Mesh List Tags for Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+          description: The maximum number of tag results returned by <code>ListTagsForResource</code> in paginated output.
+            When this parameter is used, <code>ListTagsForResource</code
+        - name: nextToken
+          in: query
+          type: string
+          description: The <code>nextToken</code> value returned from a previous paginated <code>ListTagsForResource</code>
+            request where <code>limit</code> was used and the results e
+        - name: resourceArn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) that identifies the resource to list the tags for.
+          required: true
+    - name: v20190125-untag#resourceArn
+      path: /v20190125/untag#resourceArn
+      operations:
+      - name: untagresource
+        method: PUT
+        description: AWS App Mesh Untag Resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: resourceArn
+          in: query
+          type: string
+          description: The Amazon Resource Name (ARN) of the resource to delete tags from.
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AWS_APP_MESH_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: aws-app-mesh-rest
+    port: 8080
+    description: REST adapter for AWS App Mesh. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/v20190125/meshes
+      name: v20190125-meshes
+      description: REST surface for v20190125-meshes.
+      operations:
+      - method: PUT
+        name: createmesh
+        description: AWS App Mesh Create Mesh
+        call: aws-app-mesh.createmesh
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listmeshes
+        description: AWS App Mesh List Meshes
+        call: aws-app-mesh.listmeshes
+        with:
+          limit: rest.limit
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}
+      name: v20190125-meshes-meshname
+      description: REST surface for v20190125-meshes-meshName.
+      operations:
+      - method: DELETE
+        name: deletemesh
+        description: AWS App Mesh Delete Mesh
+        call: aws-app-mesh.deletemesh
+        with:
+          meshName: rest.meshName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describemesh
+        description: AWS App Mesh Describe Mesh
+        call: aws-app-mesh.describemesh
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatemesh
+        description: AWS App Mesh Update Mesh
+        call: aws-app-mesh.updatemesh
+        with:
+          meshName: rest.meshName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualgateway/{virtualgatewayname}/gatewayroutes
+      name: v20190125-meshes-meshname-virtualgateway-virtualgatewayname-gatewayroutes
+      description: REST surface for v20190125-meshes-meshName-virtualGateway-virtualGatewayName-gatewayRoutes.
+      operations:
+      - method: PUT
+        name: creategatewayroute
+        description: AWS App Mesh Create Gateway Route
+        call: aws-app-mesh.creategatewayroute
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualGatewayName: rest.virtualGatewayName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listgatewayroutes
+        description: AWS App Mesh List Gateway Routes
+        call: aws-app-mesh.listgatewayroutes
+        with:
+          limit: rest.limit
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          nextToken: rest.nextToken
+          virtualGatewayName: rest.virtualGatewayName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualgateway/{virtualgatewayname}/gatewayroutes/{gatewayroutename}
+      name: v20190125-meshes-meshname-virtualgateway-virtualgatewayname-gatewayroutes-gatewa
+      description: REST surface for v20190125-meshes-meshName-virtualGateway-virtualGatewayName-gatewayRoutes-gatewa.
+      operations:
+      - method: DELETE
+        name: deletegatewayroute
+        description: AWS App Mesh Delete Gateway Route
+        call: aws-app-mesh.deletegatewayroute
+        with:
+          gatewayRouteName: rest.gatewayRouteName
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualGatewayName: rest.virtualGatewayName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describegatewayroute
+        description: AWS App Mesh Describe Gateway Route
+        call: aws-app-mesh.describegatewayroute
+        with:
+          gatewayRouteName: rest.gatewayRouteName
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualGatewayName: rest.virtualGatewayName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updategatewayroute
+        description: AWS App Mesh Update Gateway Route
+        call: aws-app-mesh.updategatewayroute
+        with:
+          gatewayRouteName: rest.gatewayRouteName
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualGatewayName: rest.virtualGatewayName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualgateways
+      name: v20190125-meshes-meshname-virtualgateways
+      description: REST surface for v20190125-meshes-meshName-virtualGateways.
+      operations:
+      - method: PUT
+        name: createvirtualgateway
+        description: AWS App Mesh Create Virtual Gateway
+        call: aws-app-mesh.createvirtualgateway
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listvirtualgateways
+        description: AWS App Mesh List Virtual Gateways
+        call: aws-app-mesh.listvirtualgateways
+        with:
+          limit: rest.limit
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualgateways/{virtualgatewayname}
+      name: v20190125-meshes-meshname-virtualgateways-virtualgatewayname
+      description: REST surface for v20190125-meshes-meshName-virtualGateways-virtualGatewayName.
+      operations:
+      - method: DELETE
+        name: deletevirtualgateway
+        description: AWS App Mesh Delete Virtual Gateway
+        call: aws-app-mesh.deletevirtualgateway
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualGatewayName: rest.virtualGatewayName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describevirtualgateway
+        description: AWS App Mesh Describe Virtual Gateway
+        call: aws-app-mesh.describevirtualgateway
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualGatewayName: rest.virtualGatewayName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatevirtualgateway
+        description: AWS App Mesh Update Virtual Gateway
+        call: aws-app-mesh.updatevirtualgateway
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualGatewayName: rest.virtualGatewayName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualnodes
+      name: v20190125-meshes-meshname-virtualnodes
+      description: REST surface for v20190125-meshes-meshName-virtualNodes.
+      operations:
+      - method: PUT
+        name: createvirtualnode
+        description: AWS App Mesh Create Virtual Node
+        call: aws-app-mesh.createvirtualnode
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listvirtualnodes
+        description: AWS App Mesh List Virtual Nodes
+        call: aws-app-mesh.listvirtualnodes
+        with:
+          limit: rest.limit
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualnodes/{virtualnodename}
+      name: v20190125-meshes-meshname-virtualnodes-virtualnodename
+      description: REST surface for v20190125-meshes-meshName-virtualNodes-virtualNodeName.
+      operations:
+      - method: DELETE
+        name: deletevirtualnode
+        description: AWS App Mesh Delete Virtual Node
+        call: aws-app-mesh.deletevirtualnode
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualNodeName: rest.virtualNodeName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describevirtualnode
+        description: AWS App Mesh Describe Virtual Node
+        call: aws-app-mesh.describevirtualnode
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualNodeName: rest.virtualNodeName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatevirtualnode
+        description: AWS App Mesh Update Virtual Node
+        call: aws-app-mesh.updatevirtualnode
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualNodeName: rest.virtualNodeName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualrouter/{virtualroutername}/routes
+      name: v20190125-meshes-meshname-virtualrouter-virtualroutername-routes
+      description: REST surface for v20190125-meshes-meshName-virtualRouter-virtualRouterName-routes.
+      operations:
+      - method: PUT
+        name: createroute
+        description: AWS App Mesh Create Route
+        call: aws-app-mesh.createroute
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualRouterName: rest.virtualRouterName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listroutes
+        description: AWS App Mesh List Routes
+        call: aws-app-mesh.listroutes
+        with:
+          limit: rest.limit
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          nextToken: rest.nextToken
+          virtualRouterName: rest.virtualRouterName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualrouter/{virtualroutername}/routes/{routename}
+      name: v20190125-meshes-meshname-virtualrouter-virtualroutername-routes-routename
+      description: REST surface for v20190125-meshes-meshName-virtualRouter-virtualRouterName-routes-routeName.
+      operations:
+      - method: DELETE
+        name: deleteroute
+        description: AWS App Mesh Delete Route
+        call: aws-app-mesh.deleteroute
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          routeName: rest.routeName
+          virtualRouterName: rest.virtualRouterName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeroute
+        description: AWS App Mesh Describe Route
+        call: aws-app-mesh.describeroute
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          routeName: rest.routeName
+          virtualRouterName: rest.virtualRouterName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateroute
+        description: AWS App Mesh Update Route
+        call: aws-app-mesh.updateroute
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          routeName: rest.routeName
+          virtualRouterName: rest.virtualRouterName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualrouters
+      name: v20190125-meshes-meshname-virtualrouters
+      description: REST surface for v20190125-meshes-meshName-virtualRouters.
+      operations:
+      - method: PUT
+        name: createvirtualrouter
+        description: AWS App Mesh Create Virtual Router
+        call: aws-app-mesh.createvirtualrouter
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listvirtualrouters
+        description: AWS App Mesh List Virtual Routers
+        call: aws-app-mesh.listvirtualrouters
+        with:
+          limit: rest.limit
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualrouters/{virtualroutername}
+      name: v20190125-meshes-meshname-virtualrouters-virtualroutername
+      description: REST surface for v20190125-meshes-meshName-virtualRouters-virtualRouterName.
+      operations:
+      - method: DELETE
+        name: deletevirtualrouter
+        description: AWS App Mesh Delete Virtual Router
+        call: aws-app-mesh.deletevirtualrouter
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualRouterName: rest.virtualRouterName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describevirtualrouter
+        description: AWS App Mesh Describe Virtual Router
+        call: aws-app-mesh.describevirtualrouter
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualRouterName: rest.virtualRouterName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatevirtualrouter
+        description: AWS App Mesh Update Virtual Router
+        call: aws-app-mesh.updatevirtualrouter
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualRouterName: rest.virtualRouterName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualservices
+      name: v20190125-meshes-meshname-virtualservices
+      description: REST surface for v20190125-meshes-meshName-virtualServices.
+      operations:
+      - method: PUT
+        name: createvirtualservice
+        description: AWS App Mesh Create Virtual Service
+        call: aws-app-mesh.createvirtualservice
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listvirtualservices
+        description: AWS App Mesh List Virtual Services
+        call: aws-app-mesh.listvirtualservices
+        with:
+          limit: rest.limit
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          nextToken: rest.nextToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/meshes/{meshname}/virtualservices/{virtualservicename}
+      name: v20190125-meshes-meshname-virtualservices-virtualservicename
+      description: REST surface for v20190125-meshes-meshName-virtualServices-virtualServiceName.
+      operations:
+      - method: DELETE
+        name: deletevirtualservice
+        description: AWS App Mesh Delete Virtual Service
+        call: aws-app-mesh.deletevirtualservice
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualServiceName: rest.virtualServiceName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describevirtualservice
+        description: AWS App Mesh Describe Virtual Service
+        call: aws-app-mesh.describevirtualservice
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualServiceName: rest.virtualServiceName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updatevirtualservice
+        description: AWS App Mesh Update Virtual Service
+        call: aws-app-mesh.updatevirtualservice
+        with:
+          meshName: rest.meshName
+          meshOwner: rest.meshOwner
+          virtualServiceName: rest.virtualServiceName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/tag-resourcearn
+      name: v20190125-tag-resourcearn
+      description: REST surface for v20190125-tag#resourceArn.
+      operations:
+      - method: PUT
+        name: tagresource
+        description: AWS App Mesh Tag Resource
+        call: aws-app-mesh.tagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/tags-resourcearn
+      name: v20190125-tags-resourcearn
+      description: REST surface for v20190125-tags#resourceArn.
+      operations:
+      - method: GET
+        name: listtagsforresource
+        description: AWS App Mesh List Tags for Resource
+        call: aws-app-mesh.listtagsforresource
+        with:
+          limit: rest.limit
+          nextToken: rest.nextToken
+          resourceArn: rest.resourceArn
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v20190125/untag-resourcearn
+      name: v20190125-untag-resourcearn
+      description: REST surface for v20190125-untag#resourceArn.
+      operations:
+      - method: PUT
+        name: untagresource
+        description: AWS App Mesh Untag Resource
+        call: aws-app-mesh.untagresource
+        with:
+          resourceArn: rest.resourceArn
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: aws-app-mesh-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for AWS App Mesh. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: aws-app-mesh-create-mesh
+      description: AWS App Mesh Create Mesh
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.createmesh
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-meshes
+      description: AWS App Mesh List Meshes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listmeshes
+      with:
+        limit: tools.limit
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-delete-mesh
+      description: AWS App Mesh Delete Mesh
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: aws-app-mesh.deletemesh
+      with:
+        meshName: tools.meshName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-describe-mesh
+      description: AWS App Mesh Describe Mesh
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.describemesh
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-update-mesh
+      description: AWS App Mesh Update Mesh
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.updatemesh
+      with:
+        meshName: tools.meshName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-create-gateway
+      description: AWS App Mesh Create Gateway Route
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.creategatewayroute
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualGatewayName: tools.virtualGatewayName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-gateway
+      description: AWS App Mesh List Gateway Routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listgatewayroutes
+      with:
+        limit: tools.limit
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        nextToken: tools.nextToken
+        virtualGatewayName: tools.virtualGatewayName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-delete-gateway
+      description: AWS App Mesh Delete Gateway Route
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: aws-app-mesh.deletegatewayroute
+      with:
+        gatewayRouteName: tools.gatewayRouteName
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualGatewayName: tools.virtualGatewayName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-describe-gateway
+      description: AWS App Mesh Describe Gateway Route
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.describegatewayroute
+      with:
+        gatewayRouteName: tools.gatewayRouteName
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualGatewayName: tools.virtualGatewayName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-update-gateway
+      description: AWS App Mesh Update Gateway Route
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.updategatewayroute
+      with:
+        gatewayRouteName: tools.gatewayRouteName
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualGatewayName: tools.virtualGatewayName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-create-virtual
+      description: AWS App Mesh Create Virtual Gateway
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.createvirtualgateway
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-virtual
+      description: AWS App Mesh List Virtual Gateways
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listvirtualgateways
+      with:
+        limit: tools.limit
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-delete-virtual
+      description: AWS App Mesh Delete Virtual Gateway
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: aws-app-mesh.deletevirtualgateway
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualGatewayName: tools.virtualGatewayName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-describe-virtual
+      description: AWS App Mesh Describe Virtual Gateway
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.describevirtualgateway
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualGatewayName: tools.virtualGatewayName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-update-virtual
+      description: AWS App Mesh Update Virtual Gateway
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.updatevirtualgateway
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualGatewayName: tools.virtualGatewayName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-create-virtual-2
+      description: AWS App Mesh Create Virtual Node
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.createvirtualnode
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-virtual-2
+      description: AWS App Mesh List Virtual Nodes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listvirtualnodes
+      with:
+        limit: tools.limit
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-delete-virtual-2
+      description: AWS App Mesh Delete Virtual Node
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: aws-app-mesh.deletevirtualnode
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualNodeName: tools.virtualNodeName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-describe-virtual-2
+      description: AWS App Mesh Describe Virtual Node
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.describevirtualnode
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualNodeName: tools.virtualNodeName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-update-virtual-2
+      description: AWS App Mesh Update Virtual Node
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.updatevirtualnode
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualNodeName: tools.virtualNodeName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-create-route
+      description: AWS App Mesh Create Route
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.createroute
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualRouterName: tools.virtualRouterName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-routes
+      description: AWS App Mesh List Routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listroutes
+      with:
+        limit: tools.limit
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        nextToken: tools.nextToken
+        virtualRouterName: tools.virtualRouterName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-delete-route
+      description: AWS App Mesh Delete Route
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: aws-app-mesh.deleteroute
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        routeName: tools.routeName
+        virtualRouterName: tools.virtualRouterName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-describe-route
+      description: AWS App Mesh Describe Route
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.describeroute
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        routeName: tools.routeName
+        virtualRouterName: tools.virtualRouterName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-update-route
+      description: AWS App Mesh Update Route
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.updateroute
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        routeName: tools.routeName
+        virtualRouterName: tools.virtualRouterName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-create-virtual-3
+      description: AWS App Mesh Create Virtual Router
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.createvirtualrouter
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-virtual-3
+      description: AWS App Mesh List Virtual Routers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listvirtualrouters
+      with:
+        limit: tools.limit
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-delete-virtual-3
+      description: AWS App Mesh Delete Virtual Router
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: aws-app-mesh.deletevirtualrouter
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualRouterName: tools.virtualRouterName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-describe-virtual-3
+      description: AWS App Mesh Describe Virtual Router
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.describevirtualrouter
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualRouterName: tools.virtualRouterName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-update-virtual-3
+      description: AWS App Mesh Update Virtual Router
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.updatevirtualrouter
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualRouterName: tools.virtualRouterName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-create-virtual-4
+      description: AWS App Mesh Create Virtual Service
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.createvirtualservice
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-virtual-4
+      description: AWS App Mesh List Virtual Services
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listvirtualservices
+      with:
+        limit: tools.limit
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        nextToken: tools.nextToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-delete-virtual-4
+      description: AWS App Mesh Delete Virtual Service
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: aws-app-mesh.deletevirtualservice
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualServiceName: tools.virtualServiceName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-describe-virtual-4
+      description: AWS App Mesh Describe Virtual Service
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.describevirtualservice
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualServiceName: tools.virtualServiceName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-update-virtual-4
+      description: AWS App Mesh Update Virtual Service
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.updatevirtualservice
+      with:
+        meshName: tools.meshName
+        meshOwner: tools.meshOwner
+        virtualServiceName: tools.virtualServiceName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-tag-resource
+      description: AWS App Mesh Tag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.tagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-list-tags
+      description: AWS App Mesh List Tags for Resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.listtagsforresource
+      with:
+        limit: tools.limit
+        nextToken: tools.nextToken
+        resourceArn: tools.resourceArn
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: aws-app-mesh-untag-resource
+      description: AWS App Mesh Untag Resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: aws-app-mesh.untagresource
+      with:
+        resourceArn: tools.resourceArn
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
