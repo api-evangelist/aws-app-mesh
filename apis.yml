@@ -40,12 +40,12 @@ apis:
     url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
   - type: Authentication
     url: https://docs.aws.amazon.com/app-mesh/latest/userguide/security-iam.html
-  - type: Quickstart
+  - type: GettingStarted
     url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting-started-ecs.html
   - type: Documentation
     url: https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
     title: Migration Guide to ECS Service Connect
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/aws-app-mesh.yaml
 common:
 - type: Website
