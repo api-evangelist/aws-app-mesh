@@ -48,6 +48,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/aws-app-mesh.yaml
 common:
+- type: TrustCenter
+  url: security/aws-app-mesh-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/aws-app-mesh-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/aws-app-mesh-domain-security.yml
+- type: Authentication
+  url: authentication/aws-app-mesh-authentication.yml
 - type: Website
   url: https://aws.amazon.com/app-mesh/
 - type: Documentation
