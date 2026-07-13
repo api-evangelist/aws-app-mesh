@@ -1,6 +1,23 @@
+# aws-app-mesh — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 50% of servers already https (warn)
+#   - path-params-casing: camel @ 100% (n=61)
+#   - query-params-casing: camel @ 84% (n=50)
+#   - operationid-casing: pascal @ 100% (n=38)
+#   - schema-names-casing: pascal @ 100% (n=333)
+#   - schema-properties-casing: snake @ 54% (n=476)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - error-schema-defined: InternalServerErrorException
+#   - pagination params observed: ['limit', 'nextToken']
+#   - merge: kept 19 existing, added 6 measured, upgraded 0
+#   - added: path-params-casing, query-params-casing, schema-names-casing, schema-properties-casing, security-schemes-defined, error-schema-defined
+extends:
+  - spectral:oas
 rules:
-
-  # INFO / METADATA
   info-title-prefix:
     description: API title must start with "AWS App Mesh"
     severity: warn
@@ -8,8 +25,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^AWS App Mesh"
-
+        match: ^AWS App Mesh
   info-description-required:
     description: Info object must have a description
     severity: error
@@ -17,7 +33,6 @@ rules:
     then:
       field: description
       function: truthy
-
   info-version-required:
     description: Info object must have a version
     severity: error
@@ -25,8 +40,6 @@ rules:
     then:
       field: version
       function: truthy
-
-  # OPENAPI VERSION
   openapi-version-3:
     description: All specs must use OpenAPI 3.x
     severity: error
@@ -35,9 +48,7 @@ rules:
       field: openapi
       function: pattern
       functionOptions:
-        match: "^3\\."
-
-  # SERVERS
+        match: ^3\.
   servers-defined:
     description: Servers array must be defined
     severity: error
@@ -45,7 +56,6 @@ rules:
     then:
       field: servers
       function: truthy
-
   servers-https:
     description: All server URLs must use HTTPS
     severity: error
@@ -53,9 +63,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^https://"
-
-  # OPERATIONS
+        match: ^https://
   operation-summary-required:
     description: Every operation must have a summary
     severity: error
@@ -63,7 +71,6 @@ rules:
     then:
       field: summary
       function: truthy
-
   operation-summary-prefix:
     description: Operation summaries must start with "AWS App Mesh"
     severity: warn
@@ -71,8 +78,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^AWS App Mesh"
-
+        match: ^AWS App Mesh
   operation-description-required:
     description: Every operation must have a description
     severity: error
@@ -80,7 +86,6 @@ rules:
     then:
       field: description
       function: truthy
-
   operation-id-required:
     description: Every operation must have an operationId
     severity: error
@@ -88,7 +93,6 @@ rules:
     then:
       field: operationId
       function: truthy
-
   operation-id-pascal-case:
     description: OperationIds should use PascalCase
     severity: warn
@@ -96,8 +100,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^[A-Z][a-zA-Z0-9]*$"
-
+        match: ^[A-Z][a-zA-Z0-9]*$
   operation-tags-required:
     description: Every operation must have at least one tag
     severity: warn
@@ -105,8 +108,6 @@ rules:
     then:
       field: tags
       function: truthy
-
-  # PARAMETERS
   parameter-description-required:
     description: All parameters must have descriptions
     severity: warn
@@ -114,8 +115,6 @@ rules:
     then:
       field: description
       function: truthy
-
-  # RESPONSES
   response-description-required:
     description: All responses must have descriptions
     severity: error
@@ -123,8 +122,6 @@ rules:
     then:
       field: description
       function: truthy
-
-  # SCHEMAS
   schema-description:
     description: Component schemas should have descriptions
     severity: warn
@@ -132,17 +129,13 @@ rules:
     then:
       field: description
       function: truthy
-
-  # SECURITY
   security-schemes-defined:
-    description: Security schemes should be defined in components
+    description: Security schemes should be defined in components.
     severity: warn
-    given: $
+    given: $.components
     then:
-      field: components.securitySchemes
+      field: securitySchemes
       function: truthy
-
-  # HTTP METHOD CONVENTIONS
   method-get-no-body:
     description: GET operations must not have a request body
     severity: error
@@ -150,8 +143,6 @@ rules:
     then:
       field: requestBody
       function: falsy
-
-  # GENERAL QUALITY
   no-empty-descriptions:
     description: Descriptions must not be empty
     severity: error
@@ -159,12 +150,53 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: ".+"
-
+        match: .+
   deprecation-documented:
     description: Deprecated operations should have a description
     severity: warn
     given: $.paths[*][*][?(@.deprecated == true)]
     then:
       field: description
+      function: truthy
+  path-params-casing:
+    description: Path parameters should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*].parameters[?(@.in=='path')].name
+    then:
+      function: casing
+      functionOptions:
+        type: camel
+  query-params-casing:
+    description: Query parameters should be camelCase (the dominant convention in this API).
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].parameters[?(@.in=='query')]
+    then:
+      field: name
+      function: casing
+      functionOptions:
+        type: camel
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  schema-properties-casing:
+    description: Schema properties should be snake_case (the dominant convention in this API).
+    severity: info
+    given: $.components.schemas[*].properties
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: snake
+  error-schema-defined:
+    description: A shared error schema (InternalServerErrorException) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: InternalServerErrorException
       function: truthy
