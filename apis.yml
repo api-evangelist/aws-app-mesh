@@ -48,6 +48,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/aws-app-mesh.yaml
 common:
+- type: AgenticAccess
+  url: agentic-access/aws-app-mesh-agentic-access.yml
 - type: TrustCenter
   url: security/aws-app-mesh-trust-center.yml
 - type: VulnerabilityDisclosure
