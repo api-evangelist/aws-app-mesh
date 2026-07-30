@@ -5,7 +5,20 @@ description: 'AWS App Mesh is a service mesh based on the Envoy proxy that provi
   EC2, and Fargate. App Mesh standardizes service communication, giving end-to-end visibility and helping ensure high availability.
   Note: AWS App Mesh is deprecated; Amazon ECS Service Connect is the recommended replacement for new workloads.'
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/aws-app-mesh.png
 tags:
 - AWS
 - Deprecated
@@ -18,24 +31,18 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: aws-app-mesh:aws-app-mesh-api
-  name: AWS App Mesh API
-  description: API for creating and managing App Mesh service meshes, virtual services, virtual nodes, virtual routers, routes,
-    and gateway routes. The service is based on Envoy proxy and provides service discovery, traffic routing, and observability
-    for microservices.
+- aid: aws-app-mesh:aws-app-mesh-meshes-api
+  name: AWS App Mesh Meshes API
+  description: The Meshes API from AWS App Mesh — 14 operation(s) for meshes.
   humanURL: https://aws.amazon.com/app-mesh/
   baseURL: https://appmesh.amazonaws.com
   tags:
-  - Deprecated
-  - Envoy
-  - Microservices
-  - Networking
-  - Service Mesh
+  - Meshes
   properties:
+  - type: OpenAPI
+    url: openapi/aws-app-mesh-meshes-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
-  - type: OpenAPI
-    url: openapi/aws-app-mesh-openapi.yaml
   - type: APIReference
     url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
   - type: Authentication
@@ -43,11 +50,82 @@ apis:
   - type: GettingStarted
     url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting-started-ecs.html
   - type: Documentation
-    url: https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-    title: Migration Guide to ECS Service Connect
+    url: >-
+      https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
+  - type: X-NaftikoCapability
+    url: capabilities/aws-app-mesh.yaml
+- aid: aws-app-mesh:aws-app-mesh-tag-resourcearn-api
+  name: AWS App Mesh Tag#resourceArn API
+  description: The Tag#resourceArn API from AWS App Mesh — 1 operation(s) for tag#resourcearn.
+  humanURL: https://aws.amazon.com/app-mesh/
+  baseURL: https://appmesh.amazonaws.com
+  tags:
+  - Tag#resourceArn
+  properties:
+  - type: OpenAPI
+    url: openapi/aws-app-mesh-tag-resourcearn-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+  - type: APIReference
+    url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/security-iam.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting-started-ecs.html
+  - type: Documentation
+    url: >-
+      https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
+  - type: X-NaftikoCapability
+    url: capabilities/aws-app-mesh.yaml
+- aid: aws-app-mesh:aws-app-mesh-tags-resourcearn-api
+  name: AWS App Mesh Tags#resourceArn API
+  description: The Tags#resourceArn API from AWS App Mesh — 1 operation(s) for tags#resourcearn.
+  humanURL: https://aws.amazon.com/app-mesh/
+  baseURL: https://appmesh.amazonaws.com
+  tags:
+  - Tags#resourceArn
+  properties:
+  - type: OpenAPI
+    url: openapi/aws-app-mesh-tags-resourcearn-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+  - type: APIReference
+    url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/security-iam.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting-started-ecs.html
+  - type: Documentation
+    url: >-
+      https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
+  - type: X-NaftikoCapability
+    url: capabilities/aws-app-mesh.yaml
+- aid: aws-app-mesh:aws-app-mesh-untag-resourcearn-api
+  name: AWS App Mesh Untag#resourceArn API
+  description: The Untag#resourceArn API from AWS App Mesh — 1 operation(s) for untag#resourcearn.
+  humanURL: https://aws.amazon.com/app-mesh/
+  baseURL: https://appmesh.amazonaws.com
+  tags:
+  - Untag#resourceArn
+  properties:
+  - type: OpenAPI
+    url: openapi/aws-app-mesh-untag-resourcearn-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+  - type: APIReference
+    url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
+  - type: Authentication
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/security-iam.html
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/app-mesh/latest/userguide/getting-started-ecs.html
+  - type: Documentation
+    url: >-
+      https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
   - type: X-NaftikoCapability
     url: capabilities/aws-app-mesh.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/aws-app-mesh/overview
 - type: AgenticAccess
   url: agentic-access/aws-app-mesh-agentic-access.yml
 - type: TrustCenter
