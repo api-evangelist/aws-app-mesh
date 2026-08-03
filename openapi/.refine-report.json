@@ -1,0 +1,20 @@
+{
+  "provider": "aws-app-mesh",
+  "sources": [
+    "aws-app-mesh-meshes-api-openapi.yml",
+    "aws-app-mesh-tag-resourcearn-api-openapi.yml",
+    "aws-app-mesh-tags-resourcearn-api-openapi.yml",
+    "aws-app-mesh-untag-resourcearn-api-openapi.yml"
+  ],
+  "outputs": [
+    "aws-app-mesh-meshes-api-openapi.yml",
+    "aws-app-mesh-tag-resourcearn-api-openapi.yml",
+    "aws-app-mesh-tags-resourcearn-api-openapi.yml",
+    "aws-app-mesh-untag-resourcearn-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
