@@ -52,8 +52,6 @@ apis:
   - type: Documentation
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-  - type: X-NaftikoCapability
-    url: capabilities/aws-app-mesh.yaml
 - aid: aws-app-mesh:aws-app-mesh-tag-resourcearn-api
   name: AWS App Mesh Tag#resourceArn API
   description: The Tag#resourceArn API from AWS App Mesh — 1 operation(s) for tag#resourcearn.
@@ -75,8 +73,6 @@ apis:
   - type: Documentation
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-  - type: X-NaftikoCapability
-    url: capabilities/aws-app-mesh.yaml
 - aid: aws-app-mesh:aws-app-mesh-tags-resourcearn-api
   name: AWS App Mesh Tags#resourceArn API
   description: The Tags#resourceArn API from AWS App Mesh — 1 operation(s) for tags#resourcearn.
@@ -98,8 +94,6 @@ apis:
   - type: Documentation
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-  - type: X-NaftikoCapability
-    url: capabilities/aws-app-mesh.yaml
 - aid: aws-app-mesh:aws-app-mesh-untag-resourcearn-api
   name: AWS App Mesh Untag#resourceArn API
   description: The Untag#resourceArn API from AWS App Mesh — 1 operation(s) for untag#resourcearn.
@@ -121,8 +115,6 @@ apis:
   - type: Documentation
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-  - type: X-NaftikoCapability
-    url: capabilities/aws-app-mesh.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/aws-app-mesh/overview
