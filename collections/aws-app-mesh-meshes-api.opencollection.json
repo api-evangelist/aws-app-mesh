@@ -1,0 +1,2221 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS App Mesh Meshes API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meshes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "AWS App Mesh List Gateway Routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateway/:virtualGatewayName/gatewayRoutes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated output. When you use this parameter, <code>ListGatewayRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to list gateway routes in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway to list gateway routes in."
+              }
+            ]
+          },
+          "docs": "Returns a list of existing gateway routes that are associated to a virtual gateway."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Create Gateway Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateway/:virtualGatewayName/gatewayRoutes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to create the gateway route in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a gateway route.</p> <p>A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route matches a request, it can distribute traffic to a target virtual service.</p> <p>For more information about gateway routes, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html\">Gateway routes</a>.</p>"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh List Meshes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results returned by <code>ListMeshes</code> in paginated output. When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListMeshes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListMeshes</code> returns up to 100 results and a <code>nextToken</code> value if applicable."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "<p>The <code>nextToken</code> value returned from a previous paginated <code>ListMeshes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>"
+              }
+            ]
+          },
+          "docs": "Returns a list of existing service meshes."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Create Mesh",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a service mesh.</p> <p> A service mesh is a logical boundary for network traffic between services that are represented by resources within the mesh. After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes to distribute traffic between the applications in your mesh.</p> <p>For more information about service meshes, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html\">Service meshes</a>.</p>"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh List Routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouter/:virtualRouterName/routes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results returned by <code>ListRoutes</code> in paginated output. When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListRoutes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to 100 results and a <code>nextToken</code> value if applicable."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to list routes in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router to list routes in."
+              }
+            ]
+          },
+          "docs": "Returns a list of existing routes in a service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Create Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouter/:virtualRouterName/routes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to create the route in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a route that is associated with a virtual router.</p> <p> You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p> <p>For more information about routes, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html\">Routes</a>.</p>"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh List Virtual Gateways",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateways",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results returned by <code>ListVirtualGateways</code> in paginated output. When you use this parameter, <code>ListVirtualGateways</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualGateways</code> returns up to 100 results and a <code>nextToken</code> value if applicable."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to list virtual gateways in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value."
+              }
+            ]
+          },
+          "docs": "Returns a list of existing virtual gateways in a service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Create Virtual Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateways",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to create the virtual gateway in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a virtual gateway.</p> <p>A virtual gateway allows resources outside your mesh to communicate to resources that are inside your mesh. The virtual gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes service, or on an Amazon EC2 instance. Unlike a virtual node, which represents an Envoy running with an application, a virtual gateway represents Envoy deployed by itself.</p> <p>For more information about virtual gateways, see <a href=\"https://docs.aws.amazon.c"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh List Virtual Nodes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualNodes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results returned by <code>ListVirtualNodes</code> in paginated output. When you use this parameter, <code>ListVirtualNodes</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualNodes</code> returns up to 100 results and a <code>nextToken</code> value if applicable."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to list virtual nodes in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value."
+              }
+            ]
+          },
+          "docs": "Returns a list of existing virtual nodes."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Create Virtual Node",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualNodes",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to create the virtual node in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a virtual node within a service mesh.</p> <p> A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group, and whether the proxy running in a task group will communicate with other proxies using Transport Layer Security (TLS).</p> <p>You define a <code>listener</code> for any inbound traffic that your virtual node expe"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh List Virtual Routers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouters",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to list virtual routers in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value."
+              }
+            ]
+          },
+          "docs": "Returns a list of existing virtual routers in a service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Create Virtual Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouters",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to create the virtual router in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a virtual router within a service mesh.</p> <p>Specify a <code>listener</code> for any inbound traffic that your virtual router receives. Create a virtual router for each protocol and port that you need to route. Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes.</p> <p>For more information about virtual rout"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh List Virtual Services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualServices",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results returned by <code>ListVirtualServices</code> in paginated output. When you use this parameter, <code>ListVirtualServices</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualServices</code> returns up to 100 results and a <code>nextToken</code> value if applicable."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to list virtual services in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value."
+              }
+            ]
+          },
+          "docs": "Returns a list of existing virtual services in a service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Create Virtual Service",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualServices",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to create the virtual service in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a virtual service within a service mesh.</p> <p>A virtual service is an abstraction of a real service that is provided by a virtual node directly or indirectly by means of a virtual router. Dependent services call your virtual service by its <code>virtualServiceName</code>, and those requests are routed to the virtual node or virtual router that is specified as the provider for the virtual service.</p> <p>For more information about virtual services, see <a href=\"https://docs.aws.amazo"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Describe Gateway Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateway/:virtualGatewayName/gatewayRoutes/:gatewayRouteName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayRouteName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the gateway route to describe."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the gateway route resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway that the gateway route is associated with."
+              }
+            ]
+          },
+          "docs": "Describes an existing gateway route."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Update Gateway Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateway/:virtualGatewayName/gatewayRoutes/:gatewayRouteName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayRouteName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the gateway route to update."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the gateway route resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway that the gateway route is associated with."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Delete Gateway Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateway/:virtualGatewayName/gatewayRoutes/:gatewayRouteName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "gatewayRouteName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the gateway route to delete."
+              },
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to delete the gateway route from."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway to delete the route from."
+              }
+            ]
+          },
+          "docs": "Deletes an existing gateway route."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Describe Mesh",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to describe."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              }
+            ]
+          },
+          "docs": "Describes an existing service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Update Mesh",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Delete Mesh",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to delete."
+              }
+            ]
+          },
+          "docs": "<p>Deletes an existing service mesh.</p> <p>You must delete all resources (virtual services, routes, virtual routers, and virtual nodes) in the service mesh before you can delete the mesh itself.</p>"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Describe Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouter/:virtualRouterName/routes/:routeName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the route resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "routeName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the route to describe."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router that the route is associated with."
+              }
+            ]
+          },
+          "docs": "Describes an existing route."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Update Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouter/:virtualRouterName/routes/:routeName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the route resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "routeName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the route to update."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router that the route is associated with."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing route for a specified service mesh and virtual router."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Delete Route",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouter/:virtualRouterName/routes/:routeName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to delete the route in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "routeName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the route to delete."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router to delete the route in."
+              }
+            ]
+          },
+          "docs": "Deletes an existing route."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Describe Virtual Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateways/:virtualGatewayName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the gateway route resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway to describe."
+              }
+            ]
+          },
+          "docs": "Describes an existing virtual gateway."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Update Virtual Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateways/:virtualGatewayName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the virtual gateway resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing virtual gateway in a specified service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Delete Virtual Gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualGateways/:virtualGatewayName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to delete the virtual gateway from."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualGatewayName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual gateway to delete."
+              }
+            ]
+          },
+          "docs": "Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to it."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Describe Virtual Node",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualNodes/:virtualNodeName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the virtual node resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualNodeName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual node to describe."
+              }
+            ]
+          },
+          "docs": "Describes an existing virtual node."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Update Virtual Node",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualNodes/:virtualNodeName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the virtual node resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualNodeName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual node to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing virtual node in a specified service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Delete Virtual Node",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualNodes/:virtualNodeName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to delete the virtual node in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualNodeName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual node to delete."
+              }
+            ]
+          },
+          "docs": "<p>Deletes an existing virtual node.</p> <p>You must delete any virtual services that list a virtual node as a service provider before you can delete the virtual node itself.</p>"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Describe Virtual Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouters/:virtualRouterName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the virtual router resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router to describe."
+              }
+            ]
+          },
+          "docs": "Describes an existing virtual router."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Update Virtual Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouters/:virtualRouterName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the virtual router resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing virtual router in a specified service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Delete Virtual Router",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualRouters/:virtualRouterName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to delete the virtual router in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualRouterName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual router to delete."
+              }
+            ]
+          },
+          "docs": "<p>Deletes an existing virtual router.</p> <p>You must delete any routes associated with the virtual router before you can delete the router itself.</p>"
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Describe Virtual Service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualServices/:virtualServiceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the virtual service resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualServiceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual service to describe."
+              }
+            ]
+          },
+          "docs": "Describes an existing virtual service."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Update Virtual Service",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualServices/:virtualServiceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh that the virtual service resides in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualServiceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual service to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an existing virtual service in a specified service mesh."
+        },
+        {
+          "info": {
+            "name": "AWS App Mesh Delete Virtual Service",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://appmesh.{region}.amazonaws.com/v20190125/meshes/:meshName/virtualServices/:virtualServiceName",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "meshName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the service mesh to delete the virtual service in."
+              },
+              {
+                "name": "meshOwner",
+                "value": "",
+                "type": "query",
+                "description": "The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href=\"https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html\">Working with shared meshes</a>."
+              },
+              {
+                "name": "virtualServiceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the virtual service to delete."
+              }
+            ]
+          },
+          "docs": "Deletes an existing virtual service."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
