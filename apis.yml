@@ -29,7 +29,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/aws-app-mesh/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: aws-app-mesh:aws-app-mesh-meshes-api
   name: AWS App Mesh Meshes API
