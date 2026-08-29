@@ -128,6 +128,9 @@ apis:
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
 common:
+- type: CapabilityMap
+  url: capabilities/aws-app-mesh-capability-edges.yml
+  name: AWS App Mesh Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/aws-app-mesh/overview
 - type: AgenticAccess

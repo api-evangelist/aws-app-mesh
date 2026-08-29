@@ -1,0 +1,25 @@
+slug: aws-app-mesh
+provider: AWS App Mesh
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Telecommunications
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Meshes
+  spec_file: aws-app-mesh-meshes-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.85
+  evidence: PUT /v20190125/meshes  CreateMesh; PUT /v20190125/meshes/{meshName}/virtualRouters  CreateVirtualRouter;
+    'App Mesh gives you consistent visibility and network traffic controls for every microservice'
+  reason: Service-mesh resource management (meshes, virtual gateways, nodes, routers, routes) is application-level
+    network infrastructure configuration — IT infrastructure management for a devtool vendor.
