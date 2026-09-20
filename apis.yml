@@ -129,6 +129,8 @@ apis:
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
 common:
+- type: Plans
+  url: plans/aws-app-mesh-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/aws-app-mesh-capability-edges.yml
   name: AWS App Mesh Business Capability Map
