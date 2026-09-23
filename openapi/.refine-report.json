@@ -1,10 +1,7 @@
 {
   "provider": "aws-app-mesh",
   "sources": [
-    "aws-app-mesh-meshes-api-openapi.yml",
-    "aws-app-mesh-tag-resourcearn-api-openapi.yml",
-    "aws-app-mesh-tags-resourcearn-api-openapi.yml",
-    "aws-app-mesh-untag-resourcearn-api-openapi.yml"
+    "_original/aws-app-mesh-openapi.yaml"
   ],
   "outputs": [
     "aws-app-mesh-meshes-api-openapi.yml",
@@ -16,11 +13,56 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "aws-app-mesh-meshes-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "aws-app-mesh-tag-resourcearn-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "aws-app-mesh-tags-resourcearn-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "aws-app-mesh-untag-resourcearn-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "aws-app-mesh-openapi.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualGateways -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualGateways -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualNodes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualNodes -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualRouters -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualRouters -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualServices -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualServices -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName}/virtualServices/{virtualServiceName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualServices/{virtualServiceName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualServices/{virtualServiceName} -> Meshes",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/tags#resourceArn -> Tags#resourceArn",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/tag#resourceArn -> Tag#resourceArn",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/untag#resourceArn -> Untag#resourceArn",
+    "aws-app-mesh-openapi.yaml: declared missing tag: Meshes",
+    "aws-app-mesh-openapi.yaml: declared missing tag: Tag#resourceArn",
+    "aws-app-mesh-openapi.yaml: declared missing tag: Tags#resourceArn",
+    "aws-app-mesh-openapi.yaml: declared missing tag: Untag#resourceArn",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "aws-app-mesh-meshes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aws-app-mesh-tag-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aws-app-mesh-tags-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aws-app-mesh-untag-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
