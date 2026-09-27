@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2019-01-25
   x-release: v4
-  title: AWS App Mesh Tags#resource Arn API
+  title: AWS App Mesh Tags API
   description: App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -113,7 +113,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: Tags#resourceArn
+- name: Tags
 paths:
   /v20190125/tags#resourceArn:
     parameters:
@@ -233,10 +233,16 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Tags#resourceArn
+      - Tags
 components:
   schemas:
-    ForbiddenException: {}
+    BadRequestException: {}
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TagRef'
+      minItems: 0
+      maxItems: 50
     TagRef:
       type: object
       required:
@@ -252,6 +258,20 @@ components:
           - $ref: '#/components/schemas/TagValue'
           - description: The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).
       description: Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ForbiddenException: {}
+    NotFoundException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    String:
+      type: string
+    ServiceUnavailableException: {}
+    TooManyRequestsException: {}
     InternalServerErrorException: {}
     ListTagsForResourceOutput:
       type: object
@@ -267,41 +287,15 @@ components:
           - $ref: '#/components/schemas/TagList'
           - description: The tags for the resource.
       description: <zonbook></zonbook><xhtml></xhtml>
-    NotFoundException: {}
-    BadRequestException: {}
-    TooManyRequestsException: {}
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TagRef'
-      minItems: 0
-      maxItems: 50
-    ServiceUnavailableException: {}
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    String:
-      type: string
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -318,8 +312,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

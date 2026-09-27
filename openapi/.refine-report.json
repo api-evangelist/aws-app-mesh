@@ -5,11 +5,13 @@
   ],
   "outputs": [
     "aws-app-mesh-meshes-api-openapi.yml",
-    "aws-app-mesh-tag-resourcearn-api-openapi.yml",
-    "aws-app-mesh-tags-resourcearn-api-openapi.yml",
-    "aws-app-mesh-untag-resourcearn-api-openapi.yml"
+    "aws-app-mesh-tag-api-openapi.yml",
+    "aws-app-mesh-tags-api-openapi.yml",
+    "aws-app-mesh-untag-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 3 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -50,14 +52,15 @@
     "aws-app-mesh-openapi.yaml: tagged paths DELETE /v20190125/meshes/{meshName}/virtualServices/{virtualServiceName} -> Meshes",
     "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/meshes/{meshName}/virtualServices/{virtualServiceName} -> Meshes",
     "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/meshes/{meshName}/virtualServices/{virtualServiceName} -> Meshes",
-    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/tags#resourceArn -> Tags#resourceArn",
-    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/tag#resourceArn -> Tag#resourceArn",
-    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/untag#resourceArn -> Untag#resourceArn",
+    "aws-app-mesh-openapi.yaml: tagged paths GET /v20190125/tags#resourceArn -> Tags",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/tag#resourceArn -> Tag",
+    "aws-app-mesh-openapi.yaml: tagged paths PUT /v20190125/untag#resourceArn -> Untag",
     "aws-app-mesh-openapi.yaml: declared missing tag: Meshes",
-    "aws-app-mesh-openapi.yaml: declared missing tag: Tag#resourceArn",
-    "aws-app-mesh-openapi.yaml: declared missing tag: Tags#resourceArn",
-    "aws-app-mesh-openapi.yaml: declared missing tag: Untag#resourceArn",
-    "apis.yml register: already-registered"
+    "aws-app-mesh-openapi.yaml: declared missing tag: Tag",
+    "aws-app-mesh-openapi.yaml: declared missing tag: Tags",
+    "aws-app-mesh-openapi.yaml: declared missing tag: Untag",
+    "superseded outputs removed: aws-app-mesh-tag-resourcearn-api-openapi.yml, aws-app-mesh-tags-resourcearn-api-openapi.yml, aws-app-mesh-untag-resourcearn-api-openapi.yml",
+    "apis.yml register: written (+3 apis, 4 total)"
   ],
   "skipped": [
     "aws-app-mesh-meshes-api-openapi.yml: previously refined output, superseded by openapi/_original/",

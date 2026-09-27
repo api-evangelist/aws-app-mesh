@@ -65,16 +65,16 @@ apis:
   - type: Documentation
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-- aid: aws-app-mesh:aws-app-mesh-tag-resourcearn-api
-  name: AWS App Mesh Tag#resourceArn API
-  description: The Tag#resourceArn API from AWS App Mesh — 1 operation(s) for tag#resourcearn.
+- aid: aws-app-mesh:aws-app-mesh-tag-api
+  name: AWS App Mesh Tag API
+  description: The Tag API from AWS App Mesh — 1 operation(s) for tag.
   humanURL: https://aws.amazon.com/app-mesh/
   baseURL: https://appmesh.amazonaws.com
   tags:
-  - Tag#resourceArn
+  - Tag
   properties:
   - type: OpenAPI
-    url: openapi/aws-app-mesh-tag-resourcearn-api-openapi.yml
+    url: openapi/aws-app-mesh-tag-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
   - type: APIReference
@@ -86,16 +86,16 @@ apis:
   - type: Documentation
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-- aid: aws-app-mesh:aws-app-mesh-tags-resourcearn-api
-  name: AWS App Mesh Tags#resourceArn API
-  description: The Tags#resourceArn API from AWS App Mesh — 1 operation(s) for tags#resourcearn.
+- aid: aws-app-mesh:aws-app-mesh-tags-api
+  name: AWS App Mesh Tags API
+  description: The Tags API from AWS App Mesh — 1 operation(s) for tags.
   humanURL: https://aws.amazon.com/app-mesh/
   baseURL: https://appmesh.amazonaws.com
   tags:
-  - Tags#resourceArn
+  - Tags
   properties:
   - type: OpenAPI
-    url: openapi/aws-app-mesh-tags-resourcearn-api-openapi.yml
+    url: openapi/aws-app-mesh-tags-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
   - type: APIReference
@@ -107,16 +107,16 @@ apis:
   - type: Documentation
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
-- aid: aws-app-mesh:aws-app-mesh-untag-resourcearn-api
-  name: AWS App Mesh Untag#resourceArn API
-  description: The Untag#resourceArn API from AWS App Mesh — 1 operation(s) for untag#resourcearn.
+- aid: aws-app-mesh:aws-app-mesh-untag-api
+  name: AWS App Mesh Untag API
+  description: The Untag API from AWS App Mesh — 1 operation(s) for untag.
   humanURL: https://aws.amazon.com/app-mesh/
   baseURL: https://appmesh.amazonaws.com
   tags:
-  - Untag#resourceArn
+  - Untag
   properties:
   - type: OpenAPI
-    url: openapi/aws-app-mesh-untag-resourcearn-api-openapi.yml
+    url: openapi/aws-app-mesh-untag-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/app-mesh/latest/APIReference/Welcome.html
   - type: APIReference
@@ -230,5 +230,5 @@ integrations:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product

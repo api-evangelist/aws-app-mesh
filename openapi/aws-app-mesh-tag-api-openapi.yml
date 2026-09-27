@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2019-01-25
   x-release: v4
-  title: AWS App Mesh Untag#resource Arn API
+  title: AWS App Mesh Tag API
   description: App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices.
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -113,9 +113,9 @@ servers:
 security:
 - hmac: []
 tags:
-- name: Untag#resourceArn
+- name: Tag
 paths:
-  /v20190125/untag#resourceArn:
+  /v20190125/tag#resourceArn:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
     - $ref: '#/components/parameters/X-Amz-Date'
@@ -125,15 +125,15 @@ paths:
     - $ref: '#/components/parameters/X-Amz-Signature'
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     put:
-      operationId: UntagResource
-      description: Deletes specified tags from a resource.
+      operationId: TagResource
+      description: Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags associated with that resource are also deleted.
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UntagResourceOutput'
+                $ref: '#/components/schemas/TagResourceOutput'
         '480':
           description: NotFoundException
           content:
@@ -141,8 +141,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotFoundException'
               examples:
-                UntagResource480Example:
-                  summary: Default UntagResource 480 response
+                TagResource480Example:
+                  summary: Default TagResource 480 response
                   x-microcks-default: true
                   value: example
         '481':
@@ -152,59 +152,70 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequestException'
               examples:
-                UntagResource481Example:
-                  summary: Default UntagResource 481 response
+                TagResource481Example:
+                  summary: Default TagResource 481 response
                   x-microcks-default: true
                   value: example
         '482':
+          description: TooManyTagsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TooManyTagsException'
+              examples:
+                TagResource482Example:
+                  summary: Default TagResource 482 response
+                  x-microcks-default: true
+                  value: example
+        '483':
           description: TooManyRequestsException
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/TooManyRequestsException'
               examples:
-                UntagResource482Example:
-                  summary: Default UntagResource 482 response
+                TagResource483Example:
+                  summary: Default TagResource 483 response
                   x-microcks-default: true
                   value: example
-        '483':
+        '484':
           description: ForbiddenException
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ForbiddenException'
               examples:
-                UntagResource483Example:
-                  summary: Default UntagResource 483 response
+                TagResource484Example:
+                  summary: Default TagResource 484 response
                   x-microcks-default: true
                   value: example
-        '484':
+        '485':
           description: ServiceUnavailableException
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ServiceUnavailableException'
               examples:
-                UntagResource484Example:
-                  summary: Default UntagResource 484 response
+                TagResource485Example:
+                  summary: Default TagResource 485 response
                   x-microcks-default: true
                   value: example
-        '485':
+        '486':
           description: InternalServerErrorException
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerErrorException'
               examples:
-                UntagResource485Example:
-                  summary: Default UntagResource 485 response
+                TagResource486Example:
+                  summary: Default TagResource 486 response
                   x-microcks-default: true
                   value: example
       parameters:
       - name: resourceArn
         in: query
         required: true
-        description: The Amazon Resource Name (ARN) of the resource to delete tags from.
+        description: The Amazon Resource Name (ARN) of the resource to add tags to.
         schema:
           type: string
       requestBody:
@@ -214,71 +225,32 @@ paths:
             schema:
               type: object
               required:
-              - tagKeys
+              - tags
               properties:
-                tagKeys:
-                  description: The keys of the tags to be removed.
+                tags:
+                  description: The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
                   type: array
                   items:
-                    $ref: '#/components/schemas/TagKey'
+                    $ref: '#/components/schemas/TagRef'
                   minItems: 0
                   maxItems: 50
             examples:
-              UntagResourceRequestExample:
-                summary: Default UntagResource request
+              TagResourceRequestExample:
+                summary: Default TagResource request
                 x-microcks-default: true
                 value:
-                  tagKeys:
+                  tags:
                   - example-value
-      summary: AWS App Mesh Untag Resource
+      summary: AWS App Mesh Tag Resource
       x-microcks-operation:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Untag#resourceArn
+      - Tag
 components:
-  schemas:
-    ServiceUnavailableException: {}
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    NotFoundException: {}
-    ForbiddenException: {}
-    BadRequestException: {}
-    UntagResourceOutput:
-      type: object
-      properties: {}
-      description: <zonbook></zonbook><xhtml></xhtml>
-    InternalServerErrorException: {}
-    TooManyRequestsException: {}
   parameters:
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -289,12 +261,71 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    TooManyRequestsException: {}
+    ServiceUnavailableException: {}
+    BadRequestException: {}
+    NotFoundException: {}
+    InternalServerErrorException: {}
+    ForbiddenException: {}
+    TagRef:
+      type: object
+      required:
+      - key
+      - value
+      properties:
+        key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).
+      description: Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    TagResourceOutput:
+      type: object
+      properties: {}
+      description: <zonbook></zonbook><xhtml></xhtml>
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    TooManyTagsException: {}
   securitySchemes:
     hmac:
       type: apiKey
