@@ -9,9 +9,7 @@
     "aws-app-mesh-tags-api-openapi.yml",
     "aws-app-mesh-untag-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 3 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -59,13 +57,12 @@
     "aws-app-mesh-openapi.yaml: declared missing tag: Tag",
     "aws-app-mesh-openapi.yaml: declared missing tag: Tags",
     "aws-app-mesh-openapi.yaml: declared missing tag: Untag",
-    "superseded outputs removed: aws-app-mesh-tag-resourcearn-api-openapi.yml, aws-app-mesh-tags-resourcearn-api-openapi.yml, aws-app-mesh-untag-resourcearn-api-openapi.yml",
-    "apis.yml register: written (+3 apis, 4 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "aws-app-mesh-meshes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "aws-app-mesh-tag-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "aws-app-mesh-tags-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "aws-app-mesh-untag-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+    "aws-app-mesh-tag-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aws-app-mesh-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aws-app-mesh-untag-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

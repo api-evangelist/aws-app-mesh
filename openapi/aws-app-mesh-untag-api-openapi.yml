@@ -237,33 +237,24 @@ paths:
       tags:
       - Untag
 components:
+  schemas:
+    NotFoundException: {}
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ForbiddenException: {}
+    ServiceUnavailableException: {}
+    UntagResourceOutput:
+      type: object
+      properties: {}
+      description: <zonbook></zonbook><xhtml></xhtml>
+    InternalServerErrorException: {}
+    BadRequestException: {}
+    TooManyRequestsException: {}
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -274,27 +265,36 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-  schemas:
-    TooManyRequestsException: {}
-    ServiceUnavailableException: {}
-    BadRequestException: {}
-    NotFoundException: {}
-    InternalServerErrorException: {}
-    ForbiddenException: {}
-    UntagResourceOutput:
-      type: object
-      properties: {}
-      description: <zonbook></zonbook><xhtml></xhtml>
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
   securitySchemes:
     hmac:
       type: apiKey
