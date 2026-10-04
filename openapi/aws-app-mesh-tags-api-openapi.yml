@@ -236,22 +236,39 @@ paths:
       - Tags
 components:
   schemas:
-    NotFoundException: {}
+    BadRequestException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     TagList:
       type: array
       items:
         $ref: '#/components/schemas/TagRef'
       minItems: 0
       maxItems: 50
-    ServiceUnavailableException: {}
-    BadRequestException: {}
-    ForbiddenException: {}
-    InternalServerErrorException: {}
     TooManyRequestsException: {}
     TagKey:
       type: string
       minLength: 1
       maxLength: 128
+    ForbiddenException: {}
+    String:
+      type: string
+    ListTagsForResourceOutput:
+      type: object
+      required:
+      - tags
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The tags for the resource.
+      description: <zonbook></zonbook><xhtml></xhtml>
     TagRef:
       type: object
       required:
@@ -267,53 +284,12 @@ components:
           - $ref: '#/components/schemas/TagValue'
           - description: The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).
       description: Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-    String:
-      type: string
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ListTagsForResourceOutput:
-      type: object
-      required:
-      - tags
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: The tags for the resource.
-      description: <zonbook></zonbook><xhtml></xhtml>
+    NotFoundException: {}
+    InternalServerErrorException: {}
+    ServiceUnavailableException: {}
   parameters:
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -324,8 +300,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
