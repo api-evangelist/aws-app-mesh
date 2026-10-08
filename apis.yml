@@ -129,6 +129,10 @@ apis:
     url: >-
       https://aws.amazon.com/blogs/containers/migrating-from-aws-app-mesh-to-amazon-ecs-service-connect/
 common:
+- type: RateLimits
+  url: rate-limits/aws-app-mesh-rate-limits.yml
+- type: FinOps
+  url: finops/aws-app-mesh-finops.yml
 - type: Plans
   url: plans/aws-app-mesh-plans-pricing.yml
 - type: CapabilityMap
