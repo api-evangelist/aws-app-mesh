@@ -25,3 +25,16 @@ plans:
   period: none
   included_quota: You pay only for the AWS resources (EC2 instances or requested Fargate CPU and memory)
     consumed by the lightweight proxy deployed alongside your containers
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: AWS App Mesh
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
