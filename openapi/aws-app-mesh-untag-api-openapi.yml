@@ -238,41 +238,23 @@ paths:
       - Untag
 components:
   schemas:
-    BadRequestException: {}
-    InternalServerErrorException: {}
     TagKey:
       type: string
       minLength: 1
       maxLength: 128
+    NotFoundException: {}
+    ForbiddenException: {}
+    TooManyRequestsException: {}
     ServiceUnavailableException: {}
+    BadRequestException: {}
+    InternalServerErrorException: {}
     UntagResourceOutput:
       type: object
       properties: {}
       description: <zonbook></zonbook><xhtml></xhtml>
-    ForbiddenException: {}
-    TooManyRequestsException: {}
-    NotFoundException: {}
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -283,14 +265,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
